@@ -1,0 +1,4 @@
+Django==5.0.4
+django_ckeditor==6.7.1
+django_crispy_forms==2.1
+bootstrap>=4.0

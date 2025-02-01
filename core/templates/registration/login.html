@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login | MHIWeb</title>
+        {% include "core/shared_head.html" %}
+    <style>
+        {% include "core/shared_style.html" %}
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('login-form');
+        var userLogin = document.getElementById('user-login');
+        var adminLogin = document.getElementById('admin-login');
+
+            userLogin.addEventListener('click', function(e) {
+                e.preventDefault();
+                form.action = '/login/';  // Change this to your user login URL
+                form.submit();
+            });
+
+            adminLogin.addEventListener('click', function(e) {
+                e.preventDefault();
+                form.action = '/admin/login/?next=/admin/';
+                form.submit();
+            });
+        });
+    </script>
+
+</head>
+<body class=" login" data-admin-utc-offset="0">
+    <a href="#content-start" class="skip-to-content-link">Skip to main content</a>
+    <!-- Container -->
+    <div id="container">
+        {% include "core/shared_page_header.html" %}
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <h2 style="padding-left: 50px;">Login</h2>
+
+        <div class="main" id="main">
+        <main id="content-start" class="content" tabindex="-1">
+    		<!-- Content -->
+            <div id="content" class="colM">
+    			<!-- <div id="content-main"> -->
+                <div id="content-main">
+                    <div id="login-container">
+                        <form action="/admin/login/?next=/admin/" method="post" id="login-form">
+                            <div class="form-row">
+                                {% csrf_token %}
+                            </div>
+                            <div class="form-row">
+                                {{ form.as_p }}
+                            </div>
+                            <div class="submit-row">
+                                <input type="submit" value="User Log in" id="user-login">
+                                <input type="submit" value="Admin Log in" id="admin-login">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- END Content -->
+            <div id="footer"></div>
+        </main>
+        </div>
+    </div>
+
+    {% include "core/shared_svgs.html" %}
+
+    </body>
+</html>

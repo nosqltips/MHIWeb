@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login to MHIWeb</title>
+            {% include "core/shared_head.html" %}
+        <style>
+            {% include "core/shared_style.html" %}
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                const theme = localStorage.getItem('theme');
+                if (!theme) {
+                    localStorage.setItem('theme', 'light');
+                    document.body.dataset.adminColorTheme = 'light';
+                }
+            });
+        </script>
+    </head>
+    <body data-admin-utc-offset="0">
+        <a href="#content-start" class="skip-to-content-link">Skip to main content</a>
+        <!-- Container -->
+        <div id="container">
+            {% include "core/shared_page_header.html" %}
+
+
+            <h1 style="padding-left: 50px;">Welcome to MHI Web</h1>
+            {% if user.is_authenticated %}
+                <div style="padding-left: 50px;">
+                    <p>You are logged in as {{ user.username }}.</p>
+                    <p><a href="{% url 'protected' %}">View Staff Management Page</a></p>
+                    <p><a href="{% url 'admin:index' %}">Admin</a></p>
+                    <p><a href="{% url 'logout' %}">Logout</a></p>
+                </div>
+            {% else %}
+                <p style="padding-left: 50px;">You are not logged in.</p>
+                <a href="{% url 'login' %}" style="padding-left: 50px;">Login</a>
+            {% endif %}
+
+
+        </div>
+        {% include "core/shared_svgs.html" %}
+    </body>
+</html>

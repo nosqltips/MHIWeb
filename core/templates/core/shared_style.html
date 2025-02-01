@@ -1,0 +1,66 @@
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        #content, #content-main {
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        #login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 40vh;
+            width: 100%;
+        }
+
+        #login-form {
+            width: 300px;  /* Adjust this value as needed */
+            margin: 0 auto;  /* This centers the form horizontally */
+        }
+
+        #login-form .form-row {
+            margin-bottom: 15px;
+        }
+
+        #login-form label {
+            display: block;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        #login-form input[type="text"],
+        #login-form input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .submit-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .submit-row input[type="submit"] {
+            flex: 1;
+            margin: 0 5px;
+        }
+
+        /* Ensure full width and height */
+        html, body {
+            height: 80%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Override any max-width settings from Django admin styles */
+        .colM #content {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
