@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
-        <title>Login | MHIWeb</title>
-            {% include "core/shared_head.html" %}
+        <title>Unassigned | MHIWeb</title>
+          {% include "core/shared_head.html" %}
         <style>
             {% include "core/shared_style.html" %}
 
@@ -79,7 +80,7 @@
         <script>
             function sortTable(column) {
               $.ajax({
-                url: '/sort_data/',
+                url: '/sort_data_unassigned/',
                 data: { 'order_by': column },
                 success: function(response) {
                   // Clear the table and repopulate it with the sorted data
@@ -117,26 +118,14 @@
             function loadTableData(column = 'name', order = 'asc') {  // Use a real field name as default
                   $('#loadingIndicator').show();
                   $.ajax({
-                    url: '/sort_data/',
+                    url: '/sort_data_unassigned/',
                     data: { 'order_by': column, 'order': order },
                     success: function(response) {
                       var tbody = $('#sortableTable tbody');
                       tbody.empty();
                       $.each(response.data, function(i, item) {
                         var row = $('<tr>');
-                        row.append($('<td>').text(item.person_id));
                         row.append($('<td>').text(item.name));
-                        row.append($('<td>').text(item.type));
-                        row.append($('<td>').text(item.portal));
-                        row.append($('<td>').text(item.phone));
-                        row.append($('<td>').addClass('email-cell').text(item.email));
-                        row.append($('<td>').text(item.address));
-                        row.append($('<td>').text(item.area));
-                        row.append($('<td>').text(item.ward));
-                        row.append($('<td>').text(item.homeward));
-                        row.append($('<td>').text(item.homestake));
-                        row.append($('<td>').html(safeReplace(item.assignments)));
-                        row.append($('<td>').text(item.notes));
                         tbody.append(row);
                       });
                       $('#loadingIndicator').hide();
@@ -160,45 +149,21 @@
             {% include "core/shared_page_header.html" %}
 
             <div style="padding-left: 50px;">
-                <h1>MHI Staff Management</h1>
+                <h1>MHI Unassigned</h1>
                 <a href="{% url 'home' %}">Back to Home</a>
                 <p></p>
                 <div class="table-container">
                     <table id="sortableTable">
                         <thead>
                             <tr>
-                                <th style="width: 15px" data-column="person_id">ID</th>
                                 <th data-column="name">Name</th>
-                                <th data-column="type">Type</th>
-                                <th data-column="portal">Portal</th>
-                                <th data-column="phone">Phone</th>
-                                <th data-column="email" class="email-column">Email</th>
-                                <th data-column="address">Address</th>
-                                <th data-column="area">Area</th>
-                                <th data-column="ward">Ward</th>
-                                <th data-column="homeward">Home Ward</th>
-                                <th data-column="homestake">Home Stake</th>
-                                <th data-column="assignments">Assignments</th>
-                                <th data-column="notes">Notes</th>
                                 <!-- Add more table headers as needed -->
                             </tr>
                         </thead>
                         <tbody>
-                            {% for person in persons %}
+                            {% for unassigned in unassigneds %}
                             <tr>
-                                <td>{{ person.person_id }}</td>
-                                <td>{{ person.name }}</td>
-                                <td>{{ person.type }}</td>
-                                <td>{{ person.portal }}</td>
-                                <td>{{ person.phone }}</td>
-                                <td>{{ person.email }}</td>
-                                <td >{{ person.address }}</td>
-                                <td>{{ person.area }}</td>
-                                <td>{{ person.ward }}</td>
-                                <td>{{ person.homeward }}</td>
-                                <td>{{ person.homestake }}</td>
-                                <td>{{ person.assignments }}</td>
-                                <td>{{ person.notes }}</td>
+                                <td>{{ unassigned.name }}</td>
                                 <!-- Add more table cells as needed -->
                             </tr>
                             {% endfor %}

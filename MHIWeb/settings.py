@@ -77,7 +77,7 @@ DATABASES = {
         'NAME': 'mhi',
         'USER': 'crlyon2',
         'PASSWORD': 'punata76',
-        'HOST': '173.165.134.67',
+        'HOST': '136.38.79.97',
         'PORT': '3306',  # Default MySQL port
     }
 }

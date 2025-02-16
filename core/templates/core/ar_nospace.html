@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>AR Nospace | MHIWeb</title>
+          {% include "core/shared_head.html" %}
+        <style>
+            {% include "core/shared_style.html" %}
+
+            .table-container {
+                height: 800px; /* Adjust this value to fit 40 rows approximately */
+                overflow: auto;
+            }
+
+            table {
+                width: 95%;
+                border-collapse: collapse;
+            }
+
+            thead {
+                position: sticky;
+                top: 0;
+                z-index: 1;
+            }
+
+            thead th {
+                background-color: #417690; /* Change this to your desired header background color */
+                color: #f5dd5d; /* This sets the text color for the header */
+                font-weight: normal;
+                padding: 12px; /* This adds some padding to the header cells */
+                border: 1px solid #ddd;
+                font-size: 14px;
+                text-align: center;
+            }
+
+            td {
+                padding: 8px;
+                border: 1px solid #ddd;
+                font-size: 14px;
+            }
+
+            tbody tr:nth-child(even) {
+                background-color: #B6B6B6; /* Alternate row color for better readability */
+                color: black;
+            }
+
+            #sortableTable th {
+              cursor: pointer;
+            }
+            #sortableTable th.sorted-asc::after {
+              content: " ▲";
+            }
+
+            #sortableTable th.sorted-desc::after {
+              content: " ▼";
+            }
+
+            #sortableTable .email-column,
+            #sortableTable .email-cell {
+              max-width: 150px; /* Adjust as needed */
+              width: 150px;
+            }
+
+            #sortableTable td.email-cell {
+              word-break: break-all !important;
+              word-wrap: break-word !important;
+              overflow-wrap: break-word !important;
+              white-space: normal !important;
+            }
+
+            #sortableTable td {
+              max-width: 400px; /* Adjust as needed for other columns */
+              word-wrap: break-word;
+              overflow-wrap: break-word;
+            }
+
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            function sortTable(column) {
+              $.ajax({
+                url: '/sort_data/',
+                data: { 'order_by': column },
+                success: function(response) {
+                  // Clear the table and repopulate it with the sorted data
+                  $('table tbody').empty();
+                  $.each(response.data, function(i, item) {
+                    // Append new row to table
+                  });
+                }
+              });
+            }
+
+            $(document).ready(function() {
+              // Initial table load
+              loadTableData();
+
+              // Click event for table headers
+              $('#sortableTable th').click(function() {
+                var column = $(this).data('column');
+                var currentOrder = $(this).data('order') || 'asc';
+                var newOrder = currentOrder === 'asc' ? 'desc' : 'asc';
+
+                // Update the order for next click
+                $(this).data('order', newOrder);
+
+                // Remove sorting indicators from all headers
+                $('#sortableTable th').removeClass('sorted-asc sorted-desc');
+
+                // Add sorting indicator to clicked header
+                $(this).addClass('sorted-' + newOrder);
+
+                loadTableData(column, newOrder);
+              });
+            });
+
+            function loadTableData(column = 'name', order = 'asc') {  // Use a real field name as default
+                  $('#loadingIndicator').show();
+                  $.ajax({
+                    url: '/sort_data/',
+                    data: { 'order_by': column, 'order': order },
+                    success: function(response) {
+                      var tbody = $('#sortableTable tbody');
+                      tbody.empty();
+                      $.each(response.data, function(i, item) {
+                        var row = $('<tr>');
+                        row.append($('<td>').text(item.assignment_role_id));
+                        row.append($('<td>').text(item.role));
+                        tbody.append(row);
+                      });
+                      $('#loadingIndicator').hide();
+                    },
+                    error: function(xhr, status, error) {
+                      console.error("Error fetching data:", error);
+                      $('#loadingIndicator').hide();
+                    }
+                  });
+                }
+
+            function safeReplace(text) {
+              return text.replace(/\|#\|/g, '<br>');
+            }
+
+        </script>
+    </head>
+    <body data-admin-utc-offset="0">
+        <!-- Container -->
+        <div id="container">
+            {% include "core/shared_page_header.html" %}
+
+            <div style="padding-left: 50px;">
+                <h1>MHI AR Nospace</h1>
+                <a href="{% url 'home' %}">Back to Home</a>
+                <p></p>
+                <div class="table-container">
+                    <table id="sortableTable">
+                        <thead>
+                            <tr>
+                                <th style="width: 15px" data-column="id">ID</th>
+                                <th data-column="role">Role</th>
+                                <!-- Add more table headers as needed -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for assignment in assignments %}
+                            <tr>
+                                <td>{{ assignment.assignment_role_id }}</td>
+                                <td>{{ assignment.role }}</td>
+                                <!-- Add more table cells as needed -->
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <p></p>
+                <a href="{% url 'home' %}">Back to Home</a>
+            </div>
+
+        </div>
+        {% include "core/shared_svgs.html" %}
+    </body>
+</html>

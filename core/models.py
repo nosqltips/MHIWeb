@@ -168,3 +168,115 @@ class MhiViewPersonToSpreadsheet(models.Model):
     class Meta:
         managed = False
         db_table = 'vw_person_to_spreadsheet'
+
+
+class MhiViewAssignmentRole(models.Model):
+    objects = models.Manager()
+    assignment_id = models.AutoField(primary_key=True, blank=False, null=False)
+    Assignment = models.TextField(blank=True, null=True)
+    Role = models.TextField(blank=True, null=True)
+    ReportToRole = models.TextField(blank=True, null=True)
+    assigned_cnt = models.TextField(blank=True, null=True)
+    assignment_role_id = models.TextField(blank=True, null=True)
+    ar_report_to_id = models.TextField(blank=True, null=True)
+    role_id = models.TextField(blank=True, null=True)
+    role_search_fld = models.TextField(blank=True, null=True)
+    report_to_search_fld = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'vw_assignment_role'
+
+
+class MhiViewUnassigned(models.Model):
+    objects = models.Manager()
+    name = models.AutoField(primary_key=True, blank=False, null=False)
+
+    class Meta:
+        managed = False
+        db_table = 'vw_unassigned'
+
+
+class MhiViewArNospace(models.Model):
+    objects = models.Manager()
+    assignment_role_id = models.AutoField(primary_key=True, blank=False, null=False)
+    role = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'vw_ar_nospace'
+
+
+class MhiViewAssignmentRole(models.Model):
+    objects = models.Manager()
+    assignment_id = models.AutoField(primary_key=True, blank=False, null=False)
+    Assignment = models.TextField(blank=True, null=True)
+    Role = models.TextField(blank=True, null=True)
+    ReportToRole = models.TextField(blank=True, null=True)
+    assigned_cnt = models.TextField(blank=True, null=True)
+    assignment_role_id = models.TextField(blank=True, null=True)
+    ar_report_to_id = models.TextField(blank=True, null=True)
+    role_id = models.TextField(blank=True, null=True)
+    role_search_fld = models.TextField(blank=True, null=True)
+    report_to_search_fld = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'vw_assignment_role'
+
+
+class MhiViewMhiToMhtPersonReleased(models.Model):
+    objects = models.Manager()
+    person_id = models.AutoField(primary_key=True, blank=False, null=False)
+    mht_person_guid = models.TextField(blank=True, null=True)
+    mht_person_first_name_txt = models.TextField(blank=True, null=True)
+    mht_person_middle_name_txt = models.TextField(blank=True, null=True)
+    mht_person_last_name_txt = models.TextField(blank=True, null=True)
+    mht_person_suffix_txt = models.TextField(blank=True, null=True)
+    mht_person_prefix_txt = models.TextField(blank=True, null=True)
+    mht_person_phone_num_preferred_txt = models.TextField(blank=True, null=True)
+    mht_person_emai_preferred_txt = models.TextField(blank=True, null=True)
+    mht_person_addr_street_txt = models.TextField(blank=True, null=True)
+    mht_person_addr_apt_txt = models.TextField(blank=True, null=True)
+    mht_person_addr_city_txt = models.TextField(blank=True, null=True)
+    mht_person_addr_state_txt = models.TextField(blank=True, null=True)
+    mht_person_addr_zip_code_txt = models.TextField(blank=True, null=True)
+    mht_person_releast_dt = models.TextField(blank=True, null=True)
+    mht_person_last_edit_dt = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'vw_mhi_to_mht_person_released'
+
+
+class MhiPersonAssignments(models.Model):
+    objects = models.Manager()
+    person_id = models.AutoField(primary_key=True, blank=False, null=False)
+    assignment = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'vw_person_assignments'
+
+
+class MhiPersonHeirarchy(models.Model):
+    objects = models.Manager()
+    id = models.AutoField(primary_key=True, blank=False, null=False)
+    name = models.TextField(blank=True, null=True)
+    pid = models.TextField(blank=True, null=True)
+    title = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'vw_person_heirarchy'
+
+
+class MhiRoleHeirarchy(models.Model):
+    objects = models.Manager()
+    id = models.AutoField(primary_key=True, blank=False, null=False)
+    name = models.TextField(blank=True, null=True)
+    pid = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'vw_role_heirarchy'
