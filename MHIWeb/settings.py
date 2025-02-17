@@ -20,7 +20,7 @@ SECRET_KEY = 'django-insecure-ogi8ds179$)rokta6(z&+wujap$s#v)!e2jflk9m*j^ri1@&%_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['ec2-18-191-182-4.us-east-2.compute.amazonaws.com', 'mhtweb.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -75,9 +75,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mhi',
-        'USER': 'crlyon2',
-        'PASSWORD': 'punata76',
-        'HOST': '136.38.79.97',
+        'USER': 'admin',
+        'PASSWORD': 'f1H4O6Kk9liag4asSo2j',
+        'HOST': 'mhi-database.cr0ocai6c9mc.us-east-2.rds.amazonaws.com',
         'PORT': '3306',  # Default MySQL port
     }
 }
