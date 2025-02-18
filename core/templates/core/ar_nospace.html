@@ -80,7 +80,7 @@
         <script>
             function sortTable(column) {
               $.ajax({
-                url: '/sort_data/',
+                url: '/sort_data_nospace/',
                 data: { 'order_by': column },
                 success: function(response) {
                   // Clear the table and repopulate it with the sorted data
@@ -118,7 +118,7 @@
             function loadTableData(column = 'name', order = 'asc') {  // Use a real field name as default
                   $('#loadingIndicator').show();
                   $.ajax({
-                    url: '/sort_data/',
+                    url: '/sort_data_nospace/',
                     data: { 'order_by': column, 'order': order },
                     success: function(response) {
                       var tbody = $('#sortableTable tbody');

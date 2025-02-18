@@ -62,7 +62,7 @@ def assignments(request):
     assignments = MhiPersonAssignments.objects.all()
     return render(request, 'core/assignments.html', {'assignments': assignments})
 
-def sort_data_assgnments(request):
+def sort_data_assignments(request):
     column = request.GET.get('order_by', 'id')
     order = request.GET.get('order', 'asc')
 
