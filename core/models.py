@@ -188,6 +188,20 @@ class MhiViewAssignmentRole(models.Model):
         db_table = 'vw_assignment_role'
 
 
+class MhiViewAssignmentRoleAssigned(models.Model):
+    objects = models.Manager()
+    assignment_id = models.AutoField(primary_key=True, blank=False, null=False)
+    Assignment = models.TextField(blank=True, null=True)
+    Role = models.TextField(blank=True, null=True)
+    AssignedPerson = models.TextField(blank=True, null=True)
+    ReportToPerson = models.TextField(blank=True, null=True)
+    ReportToRole = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'vw_assignment_role_assigned'
+
+
 class MhiViewUnassigned(models.Model):
     objects = models.Manager()
     name = models.AutoField(primary_key=True, blank=False, null=False)

@@ -124,17 +124,31 @@
                       tbody.empty();
                       $.each(response.data, function(i, item) {
                         var row = $('<tr>');
-                        row.append($('<td>').text(item.assignment_id));
                         row.append($('<td>').text(item.Assignment));
                         row.append($('<td>').text(item.Role));
-                        row.append($('<td>').text(item.ReportToRole));
-                        row.append($('<td>').text(item.assigned_cnt));
-                        row.append($('<td>').text(item.assignment_role_id));
-                        row.append($('<td>').text(item.ar_report_to_id));
-                        row.append($('<td>').text(item.role_id));
-                        row.append($('<td>').text(item.role_search_fld));
-                        row.append($('<td>').text(item.report_to_search_fld));
-                        tbody.append(row);
+
+                        // Create the AssignedPerson cell
+                        var assignedPersonCell = $('<td>').text(item.AssignedPerson);
+                        if (item.AssignedPerson === "Unassigned" || item.AssignedPerson === "Undefined") {
+                            assignedPersonCell.css('color', 'red').css('font-weight', 'bold');
+                        }
+                        row.append(assignedPersonCell);
+
+                        // Create the ReportToPerson cell
+                        var reportToPersonCell = $('<td>').text(item.ReportToPerson);
+                        if (item.ReportToPerson === "Unassigned" || item.ReportToPerson === "Undefined") {
+                            reportToPersonCell.css('color', 'red').css('font-weight', 'bold');
+                        }
+                        row.append(reportToPersonCell);
+
+                        // ReportToRole cell
+                        var reportToRoleCell = $('<td>').text(item.ReportToRole);
+                        if (item.ReportToRole === "Unassigned / Unassigned") {
+                            reportToRoleCell.css('color', 'red').css('font-weight', 'bold');
+                        }
+                        row.append(reportToRoleCell);
+
+                      tbody.append(row);
                       });
                       $('#loadingIndicator').hide();
                     },
@@ -164,32 +178,21 @@
                     <table id="sortableTable">
                         <thead>
                             <tr>
-                                <th style="width: 15px" data-column="assignment_id">ID</th>
                                 <th data-column="Assignment">Assignment</th>
                                 <th data-column="Role">Role</th>
+                                <th data-column="AssignedPerson">Assigned Person</th>
+                                <th data-column="ReportToPerson">Report To Person</th>
                                 <th data-column="ReportToRole">Report To Role</th>
-                                <th data-column="count">Assigned Count</th>
-                                <th data-column="assignment_role">Assignment Role Id</th>
-                                <th data-column="report_to_id">AR Report To Id</th>
-                                <th data-column="role_id">Role Id</th>
-                                <th data-column="role_search_field">Role Search Field</th>
-                                <th data-column="report_to_search_field">Report to Search Field</th>
                                 <!-- Add more table headers as needed -->                            </tr>
                         </thead>
                         <tbody>
                             {% for assignment in assignments %}
                             <tr>
-                                <td>{{ assignment.assignment_id }}</td>
                                 <td>{{ assignment.Assignment }}</td>
                                 <td>{{ assignment.Role }}</td>
+                                <td>{{ assignment.AssignedPerson }}</td>
+                                <td>{{ assignment.ReportToPerson }}</td>
                                 <td>{{ assignment.ReportToRole }}</td>
-                                <td>{{ assignment.assigned_cnt }}</td>
-                                <td>{{ assignment.assignment_role_id }}</td>
-                                <td>{{ assignment.ar_report_to_id }}</td>
-                                <td>{{ assignment.role_id }}</td>
-                                <td>{{ assignment.role_search_fld }}</td>
-                                <td>{{ assignment.report_to_search_fld }}</td>
-                                <!-- Add more table cells as needed -->
                             </tr>
                             {% endfor %}
                         </tbody>

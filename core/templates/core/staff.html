@@ -124,7 +124,6 @@
                       tbody.empty();
                       $.each(response.data, function(i, item) {
                         var row = $('<tr>');
-                        row.append($('<td>').text(item.person_id));
                         row.append($('<td>').text(item.name));
                         row.append($('<td>').text(item.type));
                         row.append($('<td>').text(item.portal));
@@ -167,7 +166,6 @@
                     <table id="sortableTable">
                         <thead>
                             <tr>
-                                <th style="width: 15px" data-column="person_id">ID</th>
                                 <th data-column="name">Name</th>
                                 <th data-column="type">Type</th>
                                 <th data-column="portal">Portal</th>
@@ -186,7 +184,6 @@
                         <tbody>
                             {% for person in persons %}
                             <tr>
-                                <td>{{ person.person_id }}</td>
                                 <td>{{ person.name }}</td>
                                 <td>{{ person.type }}</td>
                                 <td>{{ person.portal }}</td>

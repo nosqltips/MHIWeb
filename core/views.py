@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, login, authenticate
 from django.contrib import messages
 from django.shortcuts import redirect, render
-from .models import MhiViewPersonToSpreadsheet, MhiPersonAssignments, MhiViewArNospace, MhiViewUnassigned, MhiViewAssignmentRole
+from .models import MhiViewPersonToSpreadsheet, MhiPersonAssignments, MhiViewArNospace, MhiViewUnassigned, MhiViewAssignmentRole, MhiViewAssignmentRoleAssigned
 from django.http import JsonResponse
 import logging
 from django.db.models import F
@@ -40,11 +40,11 @@ def sort_data_staff(request):
 
 
 @login_required
-def ar_nospace(request):
-    assignments = MhiViewArNospace.objects.all()
-    return render(request, 'core/ar_nospace.html', {'assignments': assignments})
+def roles(request):
+    roles = MhiViewArNospace.objects.all()
+    return render(request, 'core/roles.html', {'roles': roles})
 
-def sort_data_nospace(request):
+def sort_data_roles(request):
     column = request.GET.get('order_by', 'id')
     order = request.GET.get('order', 'asc')
 
@@ -95,7 +95,7 @@ def sort_data_unassigned(request):
 
 @login_required
 def assignment_role(request):
-    assignments = MhiViewAssignmentRole.objects.all()
+    assignments = MhiViewAssignmentRoleAssigned.objects.all()
     return render(request, 'core/assignment_role.html', {'assignments': assignments})
 
 def sort_data_assignment_role(request):
@@ -105,7 +105,7 @@ def sort_data_assignment_role(request):
     if order == 'desc':
         column = '-' + column
 
-    queryset = MhiViewAssignmentRole.objects.all().order_by(column)
+    queryset = MhiViewAssignmentRoleAssigned.objects.all().order_by(column)
     data = list(queryset.values())
 
     return JsonResponse({'data': data})

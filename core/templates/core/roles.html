@@ -3,7 +3,7 @@
 <html lang="en">
 
     <head>
-        <title>AR Nospace | MHIWeb</title>
+        <title>Roles | MHIWeb</title>
           {% include "core/shared_head.html" %}
         <style>
             {% include "core/shared_style.html" %}
@@ -80,7 +80,7 @@
         <script>
             function sortTable(column) {
               $.ajax({
-                url: '/sort_data_nospace/',
+                url: '/sort_data_roles/',
                 data: { 'order_by': column },
                 success: function(response) {
                   // Clear the table and repopulate it with the sorted data
@@ -115,10 +115,10 @@
               });
             });
 
-            function loadTableData(column = 'name', order = 'asc') {  // Use a real field name as default
+            function loadTableData(column = 'role', order = 'asc') {  // Use a real field name as default
                   $('#loadingIndicator').show();
                   $.ajax({
-                    url: '/sort_data_nospace/',
+                    url: '/sort_data_roles/',
                     data: { 'order_by': column, 'order': order },
                     success: function(response) {
                       var tbody = $('#sortableTable tbody');
@@ -163,10 +163,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for assignment in assignments %}
+                            {% for role in roles %}
                             <tr>
-                                <td>{{ assignment.assignment_role_id }}</td>
-                                <td>{{ assignment.role }}</td>
+                                <td>{{ role.assignment_role_id }}</td>
+                                <td>{{ role.role }}</td>
                                 <!-- Add more table cells as needed -->
                             </tr>
                             {% endfor %}
