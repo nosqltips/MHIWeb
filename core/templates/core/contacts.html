@@ -2,7 +2,7 @@
 <html lang="en">
 
     <head>
-        <title>Login | MHIWeb</title>
+        <title>Contacts | MHIWeb</title>
           {% include "core/shared_head.html" %}
         <style>
             {% include "core/shared_style.html" %}
@@ -79,7 +79,7 @@
         <script>
             function sortTable(column) {
               $.ajax({
-                url: '/sort_data/',
+                url: '/sort_data_contact/',
                 data: { 'order_by': column },
                 success: function(response) {
                   // Clear the table and repopulate it with the sorted data
@@ -117,15 +117,14 @@
             function loadTableData(column = 'name', order = 'asc') {  // Use a real field name as default
                   $('#loadingIndicator').show();
                   $.ajax({
-                    url: '/sort_data/',
+                    url: '/sort_data_contact/',
                     data: { 'order_by': column, 'order': order },
                     success: function(response) {
                       var tbody = $('#sortableTable tbody');
                       tbody.empty();
                       $.each(response.data, function(i, item) {
                         var row = $('<tr>');
-                        row.append($('<td>').text(item.contact_id));
-                        row.append($('<td>').text(item.name));
+                        row.append($('<td>').text(item.person.name_full_txt));
                         row.append($('<td>').text(item.contact_date));
                         row.append($('<td>').text(item.contact_type_txt));
                         row.append($('<td>').text(item.contact_purpose_txt));
@@ -161,8 +160,6 @@
                     <table id="sortableTable">
                         <thead>
                             <tr>
-                                <th style="width: 15px" data-column="person_id">ID</th>
-                                <th data-column="id">Contact ID</th>
                                 <th data-column="name">Name</th>
                                 <th data-column="date">contact_date</th>
                                 <th data-column="type">contact_type_txt</th>
@@ -175,8 +172,7 @@
                         <tbody>
                             {% for contact in contacts %}
                             <tr>
-                                <td>{{ contact.contact_id }}</td>
-                                <td>{{ contact.person.name }}</td>
+                                <td>{{ contact.person.name_full_txt }}</td>
                                 <td>{{ contact.contact_date }}</td>
                                 <td>{{ contact.contact_type_txt }}</td>
                                 <td>{{ contact.contact_purpose_txt }}</td>

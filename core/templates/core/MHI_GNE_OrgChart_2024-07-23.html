@@ -1,0 +1,1941 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Organization Structure</title>
+            <style>
+                html {
+                    zoom: 100%;
+                }
+                #popup {
+                    display: none;
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    /*transform: translate(-10px, -10px);*/
+                    background-color: #eee;
+                    border: 2px solid #444;
+                    padding: 10px;
+                    box-shadow: 10px 15px 8px rgba(0,0,0,0.6);
+                    z-index: 1000;
+                    border-radius: 20px;
+                }
+                #popup-close {
+                    position: absolute;
+                    top: 0x;
+                    right: 15px;
+                    cursor: pointer;
+                }
+                table {
+                    border-collapse: collapse;
+                }
+                th {
+                    text-align: center;
+                }
+                tr {
+                    border-bottom: 1px solid #444;
+                }
+                td {
+                    vertical-align: top;
+                    padding: 8px;
+                    font-size: 18px;
+                }
+                tr:hover {
+                    background-color: #D6EEEE;
+                }
+            </style>
+        </head>
+        <body>
+            <h2>My Home Town Organization - Granger North East Community</h2>
+            <p>Note: Number of individuals with each assignment is shown in the lower right corner of each position. Click on the position to see persons assigned.</p>
+            <img src="/static/MHI_OrgChart_Final.png" usemap="#org-map" alt="Organization Structure">
+    <map name="org-map"><area shape="rect" coords="313,53,430,110" href="#" alt="1-Associ" onclick="showPopup('1-Associ')"><area shape="rect" coords="183,53,300,110" href="#" alt="2-UtahDi" onclick="showPopup('2-UtahDi')"><area shape="rect" coords="443,53,560,110" href="#" alt="3-CityCh" onclick="showPopup('3-CityCh')"><area shape="rect" coords="713,3,830,60" href="#" alt="4-Execut" onclick="showPopup('4-Execut')"><area shape="rect" coords="573,53,690,110" href="#" alt="5-Inform" onclick="showPopup('5-Inform')"><area shape="rect" coords="793,153,910,210" href="#" alt="6-Admini" onclick="showPopup('6-Admini')"><area shape="rect" coords="663,393,770,450" href="#" alt="7-Graphi" onclick="showPopup('7-Graphi')"><area shape="rect" coords="823,673,930,730" href="#" alt="8-Websit" onclick="showPopup('8-Websit')"><area shape="rect" coords="663,533,770,590" href="#" alt="9-Social" onclick="showPopup('9-Social')"><area shape="rect" coords="823,533,930,590" href="#" alt="11-AdminI" onclick="showPopup('11-AdminI')"><area shape="rect" coords="823,743,930,800" href="#" alt="12-Financ" onclick="showPopup('12-Financ')"><area shape="rect" coords="823,603,930,660" href="#" alt="13-Newsle" onclick="showPopup('13-Newsle')"><area shape="rect" coords="243,153,360,210" href="#" alt="14-Associ" onclick="showPopup('14-Associ')"><area shape="rect" coords="513,323,620,380" href="#" alt="15-Activi" onclick="showPopup('15-Activi')"><area shape="rect" coords="3,243,120,300" href="#" alt="16-AdultS" onclick="showPopup('16-AdultS')"><area shape="rect" coords="163,243,280,300" href="#" alt="17-Educat" onclick="showPopup('17-Educat')"><area shape="rect" coords="323,243,440,300" href="#" alt="18-Musica" onclick="showPopup('18-Musica')"><area shape="rect" coords="353,463,460,520" href="#" alt="19-PianoC" onclick="showPopup('19-PianoC')"><area shape="rect" coords="353,533,460,590" href="#" alt="20-PianoT" onclick="showPopup('20-PianoT')"><area shape="rect" coords="193,603,300,660" href="#" alt="21-PreK12" onclick="showPopup('21-PreK12')"><area shape="rect" coords="353,323,460,380" href="#" alt="22-ArtTea" onclick="showPopup('22-ArtTea')"><area shape="rect" coords="33,323,140,380" href="#" alt="23-Cambod" onclick="showPopup('23-Cambod')"><area shape="rect" coords="33,393,140,450" href="#" alt="24-Citize" onclick="showPopup('24-Citize')"><area shape="rect" coords="353,953,460,1010" href="#" alt="25-ESLTea" onclick="showPopup('25-ESLTea')"><area shape="rect" coords="353,393,460,450" href="#" alt="26-Guitar" onclick="showPopup('26-Guitar')"><area shape="rect" coords="193,393,300,450" href="#" alt="27-Family" onclick="showPopup('27-Family')"><area shape="rect" coords="663,463,770,520" href="#" alt="28-Histor" onclick="showPopup('28-Histor')"><area shape="rect" coords="193,813,300,870" href="#" alt="29-Spanis" onclick="showPopup('29-Spanis')"><area shape="rect" coords="33,603,140,660" href="#" alt="30-Immigr" onclick="showPopup('30-Immigr')"><area shape="rect" coords="33,673,140,730" href="#" alt="31-CRCLoa" onclick="showPopup('31-CRCLoa')"><area shape="rect" coords="193,533,300,590" href="#" alt="32-MathTu" onclick="showPopup('32-MathTu')"><area shape="rect" coords="33,883,140,940" href="#" alt="33-Samoan" onclick="showPopup('33-Samoan')"><area shape="rect" coords="33,953,140,1010" href="#" alt="34-School" onclick="showPopup('34-School')"><area shape="rect" coords="193,743,300,800" href="#" alt="35-Sewing" onclick="showPopup('35-Sewing')"><area shape="rect" coords="353,603,460,660" href="#" alt="36-Ukulel" onclick="showPopup('36-Ukulel')"><area shape="rect" coords="513,533,620,590" href="#" alt="37-YouthC" onclick="showPopup('37-YouthC')"><area shape="rect" coords="513,673,620,730" href="#" alt="38-YouthI" onclick="showPopup('38-YouthI')"><area shape="rect" coords="1223,153,1340,210" href="#" alt="39-Associ" onclick="showPopup('39-Associ')"><area shape="rect" coords="1463,243,1580,300" href="#" alt="40-Westla" onclick="showPopup('40-Westla')"><area shape="rect" coords="1493,393,1600,450" href="#" alt="41-Westla" onclick="showPopup('41-Westla')"><area shape="rect" coords="1493,463,1600,520" href="#" alt="42-Westla" onclick="showPopup('42-Westla')"><area shape="rect" coords="1493,533,1600,600" href="#" alt="44-Westla" onclick="showPopup('44-Westla')"><area shape="rect" coords="1303,643,1410,700" href="#" alt="46-HomeRe" onclick="showPopup('46-HomeRe')"><area shape="rect" coords="983,843,1090,900" href="#" alt="48-Neighb" onclick="showPopup('48-Neighb')"><area shape="rect" coords="513,603,620,660" href="#" alt="49-CRCYou" onclick="showPopup('49-CRCYou')"><area shape="rect" coords="983,643,1090,700" href="#" alt="51-Associ" onclick="showPopup('51-Associ')"><area shape="rect" coords="633,153,750,210" href="#" alt="57-AdminD" onclick="showPopup('57-AdminD')"><area shape="rect" coords="483,243,600,300" href="#" alt="58-YouthA" onclick="showPopup('58-YouthA')"><area shape="rect" coords="513,463,620,520" href="#" alt="59-YouthA" onclick="showPopup('59-YouthA')"><area shape="rect" coords="513,393,620,450" href="#" alt="60-Sports" onclick="showPopup('60-Sports')"><area shape="rect" coords="33,533,140,590" href="#" alt="61-Health" onclick="showPopup('61-Health')"><area shape="rect" coords="33,463,140,520" href="#" alt="62-Emerge" onclick="showPopup('62-Emerge')"><area shape="rect" coords="33,813,140,870" href="#" alt="63-RealEs" onclick="showPopup('63-RealEs')"><area shape="rect" coords="33,741,140,799" href="#" alt="64-Natura" onclick="showPopup('64-Natura')"><area shape="rect" coords="193,953,300,1010" href="#" alt="65-Langua" onclick="showPopup('65-Langua')"><area shape="rect" coords="193,671,300,729" href="#" alt="66-SelfRe" onclick="showPopup('66-SelfRe')"><area shape="rect" coords="193,323,300,380" href="#" alt="67-Contin" onclick="showPopup('67-Contin')"><area shape="rect" coords="663,323,770,380" href="#" alt="69-Facili" onclick="showPopup('69-Facili')"><area shape="rect" coords="663,603,770,660" href="#" alt="70-VideoE" onclick="showPopup('70-VideoE')"><area shape="rect" coords="823,463,930,520" href="#" alt="71-Demogr" onclick="showPopup('71-Demogr')"><area shape="rect" coords="823,393,930,450" href="#" alt="72-DOSTec" onclick="showPopup('72-DOSTec')"><area shape="rect" coords="823,323,930,380" href="#" alt="73-Commun" onclick="showPopup('73-Commun')"><area shape="rect" coords="1303,243,1420,300" href="#" alt="74-Stansb" onclick="showPopup('74-Stansb')"><area shape="rect" coords="983,243,1100,300" href="#" alt="75-Cheste" onclick="showPopup('75-Cheste')"><area shape="rect" coords="1143,243,1260,300" href="#" alt="76-Hillsd" onclick="showPopup('76-Hillsd')"><area shape="rect" coords="1333,393,1440,450" href="#" alt="78-Stansb" onclick="showPopup('78-Stansb')"><area shape="rect" coords="1013,393,1120,450" href="#" alt="79-Cheste" onclick="showPopup('79-Cheste')"><area shape="rect" coords="1173,393,1280,450" href="#" alt="80-HPDLDO" onclick="showPopup('80-HPDLDO')"><area shape="rect" coords="1333,463,1440,520" href="#" alt="81-Stansb" onclick="showPopup('81-Stansb')"><area shape="rect" coords="1013,463,1120,520" href="#" alt="82-Cheste" onclick="showPopup('82-Cheste')"><area shape="rect" coords="1173,463,1280,520" href="#" alt="83-HPDLDO" onclick="showPopup('83-HPDLDO')"><area shape="rect" coords="1013,323,1120,380" href="#" alt="84-Cheste" onclick="showPopup('84-Cheste')"><area shape="rect" coords="1173,323,1280,380" href="#" alt="85-HPDLDO" onclick="showPopup('85-HPDLDO')"><area shape="rect" coords="1333,323,1440,380" href="#" alt="86-Stansb" onclick="showPopup('86-Stansb')"><area shape="rect" coords="1493,323,1600,380" href="#" alt="87-Westla" onclick="showPopup('87-Westla')"><area shape="rect" coords="1333,533,1440,600" href="#" alt="88-Stansb" onclick="showPopup('88-Stansb')"><area shape="rect" coords="1013,533,1120,600" href="#" alt="89-Cheste" onclick="showPopup('89-Cheste')"><area shape="rect" coords="1173,533,1280,600" href="#" alt="90-HPDLNe" onclick="showPopup('90-HPDLNe')"><area shape="rect" coords="953,3,1070,60" href="#" alt="91-Interf" onclick="showPopup('91-Interf')"><area shape="rect" coords="193,463,300,520" href="#" alt="92-Garden" onclick="showPopup('92-Garden')"><area shape="rect" coords="513,743,620,800" href="#" alt="93-DOSYou" onclick="showPopup('93-DOSYou')"><area shape="rect" coords="33,1023,140,1080" href="#" alt="94-SelfDe" onclick="showPopup('94-SelfDe')"><area shape="rect" coords="193,883,300,940" href="#" alt="95-Zumba" onclick="showPopup('95-Zumba')"><area shape="rect" coords="1143,643,1250,700" href="#" alt="97-NSCons" onclick="showPopup('97-NSCons')"><area shape="rect" coords="1303,743,1410,800" href="#" alt="98-DOSAre" onclick="showPopup('98-DOSAre')"><area shape="rect" coords="1463,643,1570,700" href="#" alt="99-NSLoan" onclick="showPopup('99-NSLoan')"><area shape="rect" coords="983,743,1090,800" href="#" alt="100-Projec" onclick="showPopup('100-Projec')"><area shape="rect" coords="1143,743,1250,800" href="#" alt="101-Resour" onclick="showPopup('101-Resour')"><area shape="rect" coords="1463,743,1570,800" href="#" alt="102-NSNeig" onclick="showPopup('102-NSNeig')">
+         </map>
+    
+        <div id="popup">
+            <span id="popup-close" onclick="closePopup()" style="font-size: 16px"><b>Close</b></span>
+            <div id="popup-content"></div>
+        </div>
+    
+        <!-- Hardcoded department information -->
+        <div id="dept-info" style="display:none;">
+         <div id="4-Execut">
+                    <h3>Executive Director</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Price, Charlotte</td>
+                                <td>Missionary</td>
+                                <td>801-588-9240</td>
+                                <td>pricecharlotte2@msn.com</td>
+                                <td>2230 Lakeline Cir, Salt Lake City, UT  84109</td>
+                                <td>Exec-Executive Director</td>  
+                                </tr>
+                            <tr>
+                                <td>Price, Patrick</td>
+                                <td>Missionary</td>
+                                <td>801-450-6521</td>
+                                <td>pprice@pricewms.com</td>
+                                <td>2230 Lakeline Cir, Salt Lake City, UT 84109</td>
+                                <td>Exec-Executive Director</td>  
+                                </tr>
+                            </table></div><div id="6-Admini">
+                    <h3>Administrative Director</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Eggett, Darren</td>
+                                <td>Missionary</td>
+                                <td>801-618-1939</td>
+                                <td>deggett@gmail.com</td>
+                                <td>698 S. Orchard Dr, Bountiful, UT 84010</td>
+                                <td>Admin-Administrative Director<br>Admin-Admin Director / Executive Secretary<br>Admin-Admin IT Specialist</td>  
+                                </tr>
+                            <tr>
+                                <td>Erekson, Dave</td>
+                                <td>Missionary</td>
+                                <td>801-599-0366</td>
+                                <td>ereksond@gmail.com</td>
+                                <td>4158 Red Tail Dr, Riverton, UT 84065</td>
+                                <td>Admin-Administrative Director<br>CRC-Spanish Teacher<br>Admin-Finance Specialist</td>  
+                                </tr>
+                            <tr>
+                                <td>Erekson, Norma</td>
+                                <td>Missionary</td>
+                                <td>801-694-7708</td>
+                                <td>normaerekson@gmail.com</td>
+                                <td>4158 Red Tail Dr, Riverton, UT 84065</td>
+                                <td>Admin-Administrative Director<br>CRC-Spanish Teacher<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            </table></div><div id="7-Graphi">
+                    <h3>Graphic Design Specialist</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Pappas, Casey (Cassandra)</td>
+                                <td>Missionary</td>
+                                <td>646-338-6699</td>
+                                <td>cassandramp@gmail.com</td>
+                                <td>2521 W 5400 S, Taylorsville, UT 84129</td>
+                                <td>Admin-Graphic Design Specialist<br>Admin-Newsletter Specialist</td>  
+                                </tr>
+                            </table></div><div id="8-Websit">
+                    <h3>Website Management Specialist</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Brown, Craig</td>
+                                <td>Missionary</td>
+                                <td>801-680-7300</td>
+                                <td>imarcticblue@gmail.com</td>
+                                <td>7299 Heywood Drive, West Jordan, UT  84081</td>
+                                <td>Admin-Website Management Specialist</td>  
+                                </tr>
+                            </table></div><div id="9-Social">
+                    <h3>Social Media Specialist</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Hart, Allison</td>
+                                <td>Missionary</td>
+                                <td>801-809-4297</td>
+                                <td>allisonhart19848@gmail.com</td>
+                                <td>4526 S. Edgeware Ln., Salt Lake City, UT 84129</td>
+                                <td>Admin-Social Media Specialist</td>  
+                                </tr>
+                            </table></div><div id="11-AdminI">
+                    <h3>Admin IT Specialist</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Eggett, Darren</td>
+                                <td>Missionary</td>
+                                <td>801-618-1939</td>
+                                <td>deggett@gmail.com</td>
+                                <td>698 S. Orchard Dr, Bountiful, UT 84010</td>
+                                <td>Admin-Administrative Director<br>Admin-Admin Director / Executive Secretary<br>Admin-Admin IT Specialist</td>  
+                                </tr>
+                            </table></div><div id="12-Financ">
+                    <h3>Finance Specialist</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Erekson, Dave</td>
+                                <td>Missionary</td>
+                                <td>801-599-0366</td>
+                                <td>ereksond@gmail.com</td>
+                                <td>4158 Red Tail Dr, Riverton, UT 84065</td>
+                                <td>Admin-Administrative Director<br>CRC-Spanish Teacher<br>Admin-Finance Specialist</td>  
+                                </tr>
+                            <tr>
+                                <td>Richards, Jonathan</td>
+                                <td>Volunteer</td>
+                                <td>801-558-5867</td>
+                                <td>jon.w.richards@gmail.com</td>
+                                <td>None</td>
+                                <td>Admin-Finance Specialist</td>  
+                                </tr>
+                            </table></div><div id="13-Newsle">
+                    <h3>Newsletter Specialist</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Haven, Anie</td>
+                                <td>Volunteer</td>
+                                <td>801-541-4331</td>
+                                <td>Anie.Haven@gmail.com</td>
+                                <td>None</td>
+                                <td>Admin-Newsletter Specialist</td>  
+                                </tr>
+                            <tr>
+                                <td>Pappas, Casey (Cassandra)</td>
+                                <td>Missionary</td>
+                                <td>646-338-6699</td>
+                                <td>cassandramp@gmail.com</td>
+                                <td>2521 W 5400 S, Taylorsville, UT 84129</td>
+                                <td>Admin-Graphic Design Specialist<br>Admin-Newsletter Specialist</td>  
+                                </tr>
+                            </table></div><div id="14-Associ">
+                    <h3>Associate Executive Director - CRC</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Burgess, Annette</td>
+                                <td>Missionary</td>
+                                <td>801-310-8446</td>
+                                <td>acburgess7@gmail.com</td>
+                                <td>10150 Altavilla Dr., Sandy, UT 84092</td>
+                                <td>CRC-Associate Executive Director - CRC</td>  
+                                </tr>
+                            <tr>
+                                <td>Burgess, Dean</td>
+                                <td>Missionary</td>
+                                <td>801-856-9526</td>
+                                <td>burgess7.db@gmail.com</td>
+                                <td>10150 Altavilla Dr., Sandy, UT 84092</td>
+                                <td>CRC-Associate Executive Director - CRC</td>  
+                                </tr>
+                            </table></div><div id="16-AdultS">
+                    <h3>Adult Services Director</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Winget, Jeril</td>
+                                <td>Missionary</td>
+                                <td>385-296-7391</td>
+                                <td>jerilwinget66@aol.com</td>
+                                <td>5334 S. Highland Dr., Holladay, UT 84117</td>
+                                <td>CRC-Adult Services Director</td>  
+                                </tr>
+                            <tr>
+                                <td>Winget, Marsha</td>
+                                <td>Missionary</td>
+                                <td>385-425-9877</td>
+                                <td>missmarsha444@gmail.com</td>
+                                <td>5334 S. Highland Dr., Holladay, UT 84117</td>
+                                <td>CRC-Adult Services Director</td>  
+                                </tr>
+                            </table></div><div id="20-PianoT">
+                    <h3>Piano Teacher</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Anderson, Heidi</td>
+                                <td>Volunteer</td>
+                                <td>801-201-0031</td>
+                                <td>hidee_a@hotmail.com</td>
+                                <td>2827 South Kenwood Street, SLC, UT  84106</td>
+                                <td>CRC-Piano Teacher<br>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Anderson, Roger</td>
+                                <td>Volunteer</td>
+                                <td>801-824-0776</td>
+                                <td>rogerrocketman@gmail.com</td>
+                                <td>2827 South Kenwood Street, SLC, UT 84106</td>
+                                <td>CRC-Piano Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Blake, Michelle</td>
+                                <td>Volunteer</td>
+                                <td>801-309-0462</td>
+                                <td>michelleblake@gmail.com</td>
+                                <td>2824 South Chadwick Street, SLC, UT 84106</td>
+                                <td>CRC-Piano Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Bunting, Kevin</td>
+                                <td>Volunteer</td>
+                                <td>801-953-4404</td>
+                                <td>buntingk1225@gmail.com</td>
+                                <td>2099 W 4700 So Apt. A113, Taylorsville, UT 84192</td>
+                                <td>CRC-Piano Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>DeBry, DeAnna</td>
+                                <td>Volunteer</td>
+                                <td>801-835-9364</td>
+                                <td>deanna.debry@gmail.com</td>
+                                <td>171 East 3rd Ave. Unit 606, SLC, UT 84103</td>
+                                <td>CRC-Piano Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Higginson, Julia</td>
+                                <td>Volunteer</td>
+                                <td>801-608-5635</td>
+                                <td>jubehigg@gmail.com</td>
+                                <td>3765 West 3900 South, WVC, UT 84120</td>
+                                <td>CRC-Piano Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Howard, Robin</td>
+                                <td>Volunteer</td>
+                                <td>801-860-5114</td>
+                                <td>robinr.howard@gmail.com</td>
+                                <td>3988 So. Kewanee Drive, WVC, UT 84120</td>
+                                <td>CRC-Piano Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Hunter, Karen</td>
+                                <td>Volunteer</td>
+                                <td>801-664-7451</td>
+                                <td>Karen12K@msn.com</td>
+                                <td>4526 S. White Flower Way, WVC, UT 84120</td>
+                                <td>CRC-Piano Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Ipson, Rebecca</td>
+                                <td>Volunteer</td>
+                                <td>801-975-9562</td>
+                                <td>rebecca.ipson50@gmail.com</td>
+                                <td>2953 South Eucalyptus Way, WVC, UT 84119</td>
+                                <td>CRC-Piano Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Jacobson, Lizzie</td>
+                                <td>Volunteer</td>
+                                <td>801-333-9985</td>
+                                <td>icanfishandyouaretoo@gmail.com</td>
+                                <td>2099 W 4700 So Apt. A113, Taylorsville, UT 84192</td>
+                                <td>CRC-Piano Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Jones, Carol</td>
+                                <td>Volunteer</td>
+                                <td>801-309-3870</td>
+                                <td>carolpianoteacher@gmail.com</td>
+                                <td>3652 Canyon Estates Drive, Bountiful, UT 84010</td>
+                                <td>CRC-Piano Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Newton, Cathy</td>
+                                <td>Volunteer</td>
+                                <td>801-651-0573</td>
+                                <td>cathycomma@gmail.com</td>
+                                <td>3673 West Spring Water Drive, WVC, UT 84120</td>
+                                <td>CRC-Piano Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Smith, Donna</td>
+                                <td>Volunteer</td>
+                                <td>801-931-9389</td>
+                                <td>aasjj5g@gmail.com</td>
+                                <td>1125 North 3080 West, Provo, UT 84601</td>
+                                <td>CRC-Piano Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Woodbury, Isaac</td>
+                                <td>Volunteer</td>
+                                <td>385-419-6900</td>
+                                <td>isaacwoodbury240@gmail.com</td>
+                                <td>, ,   </td>
+                                <td>CRC-Piano Teacher</td>  
+                                </tr>
+                            </table></div><div id="22-ArtTea">
+                    <h3>Art Teacher</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Baggaley, Anna</td>
+                                <td>Volunteer</td>
+                                <td>385-210-9074</td>
+                                <td>None</td>
+                                <td>None</td>
+                                <td>CRC-Art Teacher</td>  
+                                </tr>
+                            </table></div><div id="23-Cambod">
+                    <h3>Cambodian Outreach</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Parco, Ping</td>
+                                <td>Missionary</td>
+                                <td>801-425-1682</td>
+                                <td>pingutah@gmail.com</td>
+                                <td>3170 S 4610 W, West Valley City, UT 84120</td>
+                                <td>CRC-Cambodian Outreach</td>  
+                                </tr>
+                            <tr>
+                                <td>Parco, Sokhanny</td>
+                                <td>Missionary</td>
+                                <td>801-913-4965</td>
+                                <td>pingutah@gmail.com</td>
+                                <td>3170 S 4610 W, West Valley City, UT 84120</td>
+                                <td>CRC-Cambodian Outreach</td>  
+                                </tr>
+                            </table></div><div id="24-Citize">
+                    <h3>Citizenship Specialist</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Spence, Chuck</td>
+                                <td>Missionary</td>
+                                <td>801-580-2628</td>
+                                <td>chuckspence25@gmail.com</td>
+                                <td>1180 West Country Mile Dr., Riverton, UT 84065</td>
+                                <td>CRC-Citizenship Specialist</td>  
+                                </tr>
+                            </table></div><div id="25-ESLTea">
+                    <h3>ESL Teacher</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Anderson, Heidi</td>
+                                <td>Volunteer</td>
+                                <td>801-201-0031</td>
+                                <td>hidee_a@hotmail.com</td>
+                                <td>2827 South Kenwood Street, SLC, UT  84106</td>
+                                <td>CRC-Piano Teacher<br>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Balderas, Christine</td>
+                                <td>Missionary</td>
+                                <td>801-598-2566</td>
+                                <td>cbalderas6@gmail.com</td>
+                                <td>3118 S. 2850 East, Millcreek, UT  84109</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Balderas, Daniel</td>
+                                <td>Missionary</td>
+                                <td>801-888-0646</td>
+                                <td>cbalderas6@gmail.com</td>
+                                <td>3118 S. 2850 East, Millcreek, UT  84109</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Bowman, Kent</td>
+                                <td>Volunteer</td>
+                                <td>801-971-1389</td>
+                                <td>kmbowman@tannerco.com</td>
+                                <td>2233 Parleys Terrace, Salt Lake City, UT  84109</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Brown, Martha (Martica)</td>
+                                <td>Missionary</td>
+                                <td>801-680-7308</td>
+                                <td>marticaluzbrown01@gmail.com</td>
+                                <td>7299 Heywood Drive, West Jordan, UT  84081</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Carter, John</td>
+                                <td>Volunteer</td>
+                                <td>801-573-6211</td>
+                                <td>johnj.carter@comcast.net</td>
+                                <td>1538 Hubbard Avenue, Salt Lake City, UT  84105</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Cowley, Michael</td>
+                                <td>Missionary</td>
+                                <td>801-403-7646</td>
+                                <td>mjcowley12@gmail.com</td>
+                                <td>488 E. Crystal Meadows Lane, Draper, UT 84020</td>
+                                <td>CRC-ESL Teacher<br>CRC-Guitar Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Driggs, Laurel</td>
+                                <td>Missionary</td>
+                                <td>801-859-7980</td>
+                                <td>laurel.driggs@yahoo.com</td>
+                                <td>12053 Janice Drive, Riverton, UT  84065</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Driggs, Mark</td>
+                                <td>Missionary</td>
+                                <td>801-455-6839</td>
+                                <td>troutchaser61@yahoo.com</td>
+                                <td>12053 Janice Drive, Riverton, UT  84065</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Hansen, Becky</td>
+                                <td>Volunteer</td>
+                                <td>801-706-0558</td>
+                                <td>beckthans1953@gmail.com</td>
+                                <td>10799 So Country Creek Cove, South Jordan, UT  84095</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Hansen, Lance</td>
+                                <td>Volunteer</td>
+                                <td>801-755-9668</td>
+                                <td>hansenlbec@msn.com</td>
+                                <td>10799 So Country Creek Cove, South Jordan, UT  84095</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Johnson, Barry</td>
+                                <td>Volunteer</td>
+                                <td>480-236-1561</td>
+                                <td>barry2819@reagan.com</td>
+                                <td>638 E. Pheasant Haven Ct., Draper, UT  84020</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Johnson, Michelle</td>
+                                <td>Volunteer</td>
+                                <td>801-243-9480</td>
+                                <td>michelle.johnson@canyonsdistrict.org</td>
+                                <td>638 E. Pheasant Haven Ct., Draper, UT  84020</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Lyon, Charles</td>
+                                <td>Volunteer</td>
+                                <td>801-610-9204</td>
+                                <td>crlyon2@gmail.com</td>
+                                <td>3821 S. Kingsbury Lane Apt B3, WVC, UT  84119</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Lyon, Molly</td>
+                                <td>Volunteer</td>
+                                <td>801-980-0427</td>
+                                <td>crlyon2@gmail.com</td>
+                                <td>3821 S. Kingsbury Lane Apt B3, WVC, UT  84119</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Parkinson, Mark</td>
+                                <td>Missionary</td>
+                                <td>801-518-9312</td>
+                                <td>mrparki@msn.com</td>
+                                <td>6353 S Hopi Circle, West Jordan, UT 84081</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Provost, Vern</td>
+                                <td>Volunteer</td>
+                                <td>801-910-4641</td>
+                                <td>vprovost@afdrafting.com</td>
+                                <td>1117 W. Rivercrest Circle, So Jordan, UT 84095</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Rees, Spencer</td>
+                                <td>Volunteer</td>
+                                <td>385-277-6445</td>
+                                <td>spencerlrees@gmailcom</td>
+                                <td>None</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Rigby, Julie</td>
+                                <td>Volunteer</td>
+                                <td>801-619-5440</td>
+                                <td>berthabutts754@gmail.com</td>
+                                <td>3500 W Honda Ave, West Valley City, UT  84119</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Smith, Barry</td>
+                                <td>Volunteer</td>
+                                <td>801-278-8117</td>
+                                <td>barrymsmith1@msn.com</td>
+                                <td>3363 Edward Circle, Holladay, UT  84124</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Smith, Heather</td>
+                                <td>Missionary</td>
+                                <td>801-520-6203</td>
+                                <td>heathsmith424@gmail.com</td>
+                                <td>479 E Crystal Meadows Ln, Draper, UT 84020</td>
+                                <td>CRC-ESL Teacher<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Smith, Shaler</td>
+                                <td>Missionary</td>
+                                <td>801-598-5464</td>
+                                <td>shaler828@gmail.com</td>
+                                <td>479 E Crystal Meadows Ln, Draper, UT 84020</td>
+                                <td>CRC-ESL Teacher<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Smith, Susie</td>
+                                <td>Volunteer</td>
+                                <td>801-828-5394</td>
+                                <td>smaries2016@gmail.com</td>
+                                <td>3363 Edward Circle, Holladay, UT  84124</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Sperry, Jason</td>
+                                <td>Volunteer</td>
+                                <td>385-212-8575</td>
+                                <td>jason.sperryexec@gmail.com</td>
+                                <td>6062 Duchess Street, West Jordan, UT  84081</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Townsley, Mike</td>
+                                <td>Volunteer</td>
+                                <td>801-674-3216</td>
+                                <td>townsleymj@gmail.com</td>
+                                <td>None</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Woodbury, Sarah</td>
+                                <td>Volunteer</td>
+                                <td>301-520-1187</td>
+                                <td>smwoodbury@gmail.com</td>
+                                <td>2228 South 2300 East, Salt Lake City, UT  84109</td>
+                                <td>CRC-ESL Teacher</td>  
+                                </tr>
+                            </table></div><div id="26-Guitar">
+                    <h3>Guitar Teacher</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Cowley, Michael</td>
+                                <td>Missionary</td>
+                                <td>801-403-7646</td>
+                                <td>mjcowley12@gmail.com</td>
+                                <td>488 E. Crystal Meadows Lane, Draper, UT 84020</td>
+                                <td>CRC-ESL Teacher<br>CRC-Guitar Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Vawdrey, Dave</td>
+                                <td>Missionary</td>
+                                <td>801-509-0745</td>
+                                <td>dave@prosecurityproducts.com</td>
+                                <td>13044 S Pheasant Haven Ct, Draper, UT  84020</td>
+                                <td>CRC-Guitar Teacher</td>  
+                                </tr>
+                            </table></div><div id="27-Family">
+                    <h3>Family History Coordinator</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Wilkins, Debbie</td>
+                                <td>Missionary</td>
+                                <td>801-349-5859</td>
+                                <td>debbiewilkins0@gmail.com</td>
+                                <td>2852 S 2910 W, West Valley City, UT 84119</td>
+                                <td>CRC-Family History Coordinator</td>  
+                                </tr>
+                            <tr>
+                                <td>Wilkins, Gary</td>
+                                <td>Missionary</td>
+                                <td>801-554-6982</td>
+                                <td>garywilkins@gmail.com</td>
+                                <td>2852 S 2910 W, West Valley City, UT 84119</td>
+                                <td>CRC-Family History Coordinator</td>  
+                                </tr>
+                            </table></div><div id="28-Histor">
+                    <h3>Historian / Photographer</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Hofeling, Jana</td>
+                                <td>Missionary</td>
+                                <td>415-608-1288</td>
+                                <td>janabbb@yahoo.com</td>
+                                <td>167 E Street , Salt Lake City, UT 84103</td>
+                                <td>DOS-CRC Youth Council<br>NS-Neighborhood Services Volunteer<br>Admin-Historian / Photographer</td>  
+                                </tr>
+                            <tr>
+                                <td>Hofeling, Ken</td>
+                                <td>Missionary</td>
+                                <td>801-201-3655</td>
+                                <td>hofelingadobe@gmail.com</td>
+                                <td>167 E Street , Salt Lake City, UT 84103</td>
+                                <td>DOS-CRC Youth Council<br>NS-Neighborhood Services Volunteer<br>Admin-Historian / Photographer</td>  
+                                </tr>
+                            </table></div><div id="29-Spanis">
+                    <h3>Spanish Teacher</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Erekson, Dave</td>
+                                <td>Missionary</td>
+                                <td>801-599-0366</td>
+                                <td>ereksond@gmail.com</td>
+                                <td>4158 Red Tail Dr, Riverton, UT 84065</td>
+                                <td>Admin-Administrative Director<br>CRC-Spanish Teacher<br>Admin-Finance Specialist</td>  
+                                </tr>
+                            <tr>
+                                <td>Erekson, Norma</td>
+                                <td>Missionary</td>
+                                <td>801-694-7708</td>
+                                <td>normaerekson@gmail.com</td>
+                                <td>4158 Red Tail Dr, Riverton, UT 84065</td>
+                                <td>Admin-Administrative Director<br>CRC-Spanish Teacher<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            </table></div><div id="30-Immigr">
+                    <h3>Immigration Specialist</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Vawdrey, Wendy</td>
+                                <td>Missionary</td>
+                                <td>801-915-9639</td>
+                                <td>wvawdrey@gmail.com</td>
+                                <td>13044 S Pheasant Haven Ct, Draper, UT  84020</td>
+                                <td>CRC-Immigration Specialist</td>  
+                                </tr>
+                            </table></div><div id="31-CRCLoa">
+                    <h3>CRC Loans & Grants Specialist</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Rodriguez, Cesar</td>
+                                <td>Missionary</td>
+                                <td>801-608-8821</td>
+                                <td>crrm1973@gmail.com</td>
+                                <td>7239 S 1600 E, Cottonwood Heights, UT 84121</td>
+                                <td>CRC-CRC Loans & Grants Specialist</td>  
+                                </tr>
+                            <tr>
+                                <td>Rodriguez, Kim</td>
+                                <td>Missionary</td>
+                                <td>801-231-9311</td>
+                                <td>kim@tkjmail.com</td>
+                                <td>7239 S 1600 E, Cottonwood Heights, UT 84121</td>
+                                <td>CRC-CRC Loans & Grants Specialist</td>  
+                                </tr>
+                            </table></div><div id="32-MathTu">
+                    <h3>Math Tutor</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Cowley, Cindy</td>
+                                <td>Missionary</td>
+                                <td>801-910-8393</td>
+                                <td>draper597@yahoo.com</td>
+                                <td>488 E. Crystal Meadows Lane, Draper, UT 84020</td>
+                                <td>CRC-Math Tutor</td>  
+                                </tr>
+                            </table></div><div id="33-Samoan">
+                    <h3>Samoan Outreach</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Fa'asou, Sive'a</td>
+                                <td>Missionary</td>
+                                <td>801-414-5053</td>
+                                <td>faasou06@yahoo.com</td>
+                                <td>4779 W Burlingame Dr, West Valley City, UT 84120</td>
+                                <td>CRC-Samoan Outreach<br>NS-Westlake Neighborhood Block Captain Trainer</td>  
+                                </tr>
+                            <tr>
+                                <td>Tupuola, Si'i</td>
+                                <td>Missionary</td>
+                                <td>801-634-7132</td>
+                                <td>leroymariner@gmail.com</td>
+                                <td>2820 W 2730 S, West Valley City, UT 84119</td>
+                                <td>CRC-Samoan Outreach<br>NS-Westlake Neighborhood Block Captain Trainer</td>  
+                                </tr>
+                            <tr>
+                                <td>Tupuola, Tui</td>
+                                <td>Missionary</td>
+                                <td>801-674-6637</td>
+                                <td>leroymariner@gmail.com</td>
+                                <td>2820 W 2730 S, West Valley City, UT 84119</td>
+                                <td>CRC-Samoan Outreach<br>NS-Westlake Neighborhood Block Captain Trainer</td>  
+                                </tr>
+                            </table></div><div id="34-School">
+                    <h3>School Relations Specialist</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Gray, Dorthea</td>
+                                <td>Missionary</td>
+                                <td>801-580-9086</td>
+                                <td>graydorthea@gmail.com</td>
+                                <td>9303 Sunrise Park Dr., Sandy, UT. 84093</td>
+                                <td>CRC-School Relations Specialist</td>  
+                                </tr>
+                            <tr>
+                                <td>Gray, Merlin</td>
+                                <td>Missionary</td>
+                                <td>801-243-7153</td>
+                                <td>merlin.gray.idaho@gmail.com</td>
+                                <td>9303 Sunrise Park Dr., Sandy, UT. 84093</td>
+                                <td>CRC-School Relations Specialist</td>  
+                                </tr>
+                            </table></div><div id="35-Sewing">
+                    <h3>Sewing</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Miles, John</td>
+                                <td>Missionary</td>
+                                <td>801-201-5707</td>
+                                <td>johnrmiles68@gmail.com</td>
+                                <td>1974 E. Siggard Dr., Salt Lake City, UT 84106</td>
+                                <td>CRC-Sewing<br>NS-Project Development</td>  
+                                </tr>
+                            <tr>
+                                <td>Miles, Nannette</td>
+                                <td>Missionary</td>
+                                <td>801-201-2006</td>
+                                <td>nannette59@me.com</td>
+                                <td>1974 E. Siggard Dr., Salt Lake City, UT 84106</td>
+                                <td>CRC-Sewing</td>  
+                                </tr>
+                            <tr>
+                                <td>Soderberg, Cheryl</td>
+                                <td>Volunteer</td>
+                                <td>801-755-7817</td>
+                                <td>None</td>
+                                <td>None</td>
+                                <td>CRC-Sewing</td>  
+                                </tr>
+                            <tr>
+                                <td>Winder, Arliss</td>
+                                <td>Volunteer</td>
+                                <td>801-441-8366</td>
+                                <td>arlisswinder@gmail.com</td>
+                                <td>None</td>
+                                <td>CRC-Sewing</td>  
+                                </tr>
+                            </table></div><div id="36-Ukulel">
+                    <h3>Ukulele Teacher</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Nielsen, Roseann</td>
+                                <td>Volunteer</td>
+                                <td>714-307-5358</td>
+                                <td>roseannneilson@gmail.com</td>
+                                <td>None</td>
+                                <td>CRC-Ukulele Teacher</td>  
+                                </tr>
+                            <tr>
+                                <td>Wixom, Rosemary</td>
+                                <td>Volunteer</td>
+                                <td>801-580-8418</td>
+                                <td>rosewixom@gmail.com</td>
+                                <td>None</td>
+                                <td>CRC-Ukulele Teacher</td>  
+                                </tr>
+                            </table></div><div id="39-Associ">
+                    <h3>Associate Executive Director - NS</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Bagley, Janice</td>
+                                <td>Missionary</td>
+                                <td>801-631-0606</td>
+                                <td>janicebagley55@gmail.com</td>
+                                <td>6806 S Pine Rock Circle, Cottonwood Heights, UT 84121</td>
+                                <td>NS-Associate Executive Director - NS</td>  
+                                </tr>
+                            <tr>
+                                <td>Bagley, Steve</td>
+                                <td>Missionary</td>
+                                <td>801-209-6681</td>
+                                <td>superiorski@gmail.com</td>
+                                <td>6806 S Pine Rock Circle, Cottonwood Heights, UT 84121</td>
+                                <td>NS-Associate Executive Director - NS</td>  
+                                </tr>
+                            </table></div><div id="40-Westla">
+                    <h3>Westlake Area Director</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Wagner, Andy</td>
+                                <td>Missionary</td>
+                                <td>801-979-5483</td>
+                                <td>black_kite_electric@yahoo.com</td>
+                                <td>3123 E Walker Mill Dr., Cottonwood Heights, UT 84121</td>
+                                <td>NS-Associate City Chair<br>NS-Westlake Area Director</td>  
+                                </tr>
+                            <tr>
+                                <td>Wagner, Lori</td>
+                                <td>Missionary</td>
+                                <td>801-971-5483</td>
+                                <td>lwag_fam7@yahoo.com</td>
+                                <td>3123 E Walker Mill Dr., Cottonwood Heights, UT 84121</td>
+                                <td>NS-NS Consultant<br>NS-Westlake Area Director</td>  
+                                </tr>
+                            </table></div><div id="41-Westla">
+                    <h3>Westlake DOS Project Developer</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Poulson, Shelley</td>
+                                <td>Missionary</td>
+                                <td>801-699-8328</td>
+                                <td>shelleygram@comcast.net</td>
+                                <td>4255 Merril Circle, WVC, UT 84120</td>
+                                <td>NS-Westlake Neighborhood Block Captain Trainer<br>NS-Westlake DOS Project Developer</td>  
+                                </tr>
+                            <tr>
+                                <td>Poulson, Wayne</td>
+                                <td>Missionary</td>
+                                <td>801-573-4863</td>
+                                <td>bearcatelectric@comcast.net</td>
+                                <td>4255 Merril Circle, WVC, UT 84120</td>
+                                <td>NS-Westlake Neighborhood Block Captain Trainer<br>NS-Westlake DOS Project Developer</td>  
+                                </tr>
+                            </table></div><div id="42-Westla">
+                    <h3>Westlake DOS Resource Manager</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Pumphrey, Mark</td>
+                                <td>Missionary</td>
+                                <td>740-607-9066</td>
+                                <td>mdpump79@yahoo.com</td>
+                                <td>1110 W Erda Way, Erda, UT 84074</td>
+                                <td>NS-Westlake DOS Resource Manager<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            </table></div><div id="44-Westla">
+                    <h3>Westlake Neighborhood Block Captain Trainer</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Fa'asou, Sive'a</td>
+                                <td>Missionary</td>
+                                <td>801-414-5053</td>
+                                <td>faasou06@yahoo.com</td>
+                                <td>4779 W Burlingame Dr, West Valley City, UT 84120</td>
+                                <td>CRC-Samoan Outreach<br>NS-Westlake Neighborhood Block Captain Trainer</td>  
+                                </tr>
+                            <tr>
+                                <td>Poulson, Shelley</td>
+                                <td>Missionary</td>
+                                <td>801-699-8328</td>
+                                <td>shelleygram@comcast.net</td>
+                                <td>4255 Merril Circle, WVC, UT 84120</td>
+                                <td>NS-Westlake Neighborhood Block Captain Trainer<br>NS-Westlake DOS Project Developer</td>  
+                                </tr>
+                            <tr>
+                                <td>Poulson, Wayne</td>
+                                <td>Missionary</td>
+                                <td>801-573-4863</td>
+                                <td>bearcatelectric@comcast.net</td>
+                                <td>4255 Merril Circle, WVC, UT 84120</td>
+                                <td>NS-Westlake Neighborhood Block Captain Trainer<br>NS-Westlake DOS Project Developer</td>  
+                                </tr>
+                            <tr>
+                                <td>Staples, Joyce</td>
+                                <td>Missionary</td>
+                                <td>425-681-7452</td>
+                                <td>joycestaples@comcast.net</td>
+                                <td>8032 S. Old Barn Dr., Sandy, UT 84094</td>
+                                <td>NS-Westlake Neighborhood Block Captain Trainer</td>  
+                                </tr>
+                            <tr>
+                                <td>Tupuola, Si'i</td>
+                                <td>Missionary</td>
+                                <td>801-634-7132</td>
+                                <td>leroymariner@gmail.com</td>
+                                <td>2820 W 2730 S, West Valley City, UT 84119</td>
+                                <td>CRC-Samoan Outreach<br>NS-Westlake Neighborhood Block Captain Trainer</td>  
+                                </tr>
+                            <tr>
+                                <td>Tupuola, Tui</td>
+                                <td>Missionary</td>
+                                <td>801-674-6637</td>
+                                <td>leroymariner@gmail.com</td>
+                                <td>2820 W 2730 S, West Valley City, UT 84119</td>
+                                <td>CRC-Samoan Outreach<br>NS-Westlake Neighborhood Block Captain Trainer</td>  
+                                </tr>
+                            <tr>
+                                <td>Vesock, Jim</td>
+                                <td>Volunteer</td>
+                                <td>619-582-7859</td>
+                                <td>vesock@msn.com</td>
+                                <td>5491 W Lockwood Dr., West Valley City, UT 84120</td>
+                                <td>NS-Westlake Neighborhood Block Captain Trainer</td>  
+                                </tr>
+                            <tr>
+                                <td>Weintz, Christopher</td>
+                                <td>Missionary</td>
+                                <td>801-792-6004</td>
+                                <td>chrisweintz@comcast.net</td>
+                                <td>5132 W RockRidge Lane, West Valley City, UT 84091</td>
+                                <td>NS-Westlake Neighborhood Block Captain Trainer</td>  
+                                </tr>
+                            </table></div><div id="46-HomeRe">
+                    <h3>Home Repair</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Hardman, Mont</td>
+                                <td>Volunteer</td>
+                                <td>None</td>
+                                <td>None</td>
+                                <td>None</td>
+                                <td>NS-Home Repair</td>  
+                                </tr>
+                            </table></div><div id="48-Neighb">
+                    <h3>Neighborhood Services Volunteer</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Erekson, Norma</td>
+                                <td>Missionary</td>
+                                <td>801-694-7708</td>
+                                <td>normaerekson@gmail.com</td>
+                                <td>4158 Red Tail Dr, Riverton, UT 84065</td>
+                                <td>Admin-Administrative Director<br>CRC-Spanish Teacher<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Guevara, Dave</td>
+                                <td>Volunteer</td>
+                                <td>801-647-9910</td>
+                                <td>tguevara801@yahoo.com</td>
+                                <td>None</td>
+                                <td>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Hofeling, Jana</td>
+                                <td>Missionary</td>
+                                <td>415-608-1288</td>
+                                <td>janabbb@yahoo.com</td>
+                                <td>167 E Street , Salt Lake City, UT 84103</td>
+                                <td>DOS-CRC Youth Council<br>NS-Neighborhood Services Volunteer<br>Admin-Historian / Photographer</td>  
+                                </tr>
+                            <tr>
+                                <td>Hofeling, Ken</td>
+                                <td>Missionary</td>
+                                <td>801-201-3655</td>
+                                <td>hofelingadobe@gmail.com</td>
+                                <td>167 E Street , Salt Lake City, UT 84103</td>
+                                <td>DOS-CRC Youth Council<br>NS-Neighborhood Services Volunteer<br>Admin-Historian / Photographer</td>  
+                                </tr>
+                            <tr>
+                                <td>Morales, Hilda</td>
+                                <td>Missionary</td>
+                                <td>801-839-6778</td>
+                                <td>hilda.regulo@gmail.com</td>
+                                <td>2521 S Redwood Road, West Valley City, UT 84119</td>
+                                <td>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Morales, Regulo</td>
+                                <td>Missionary</td>
+                                <td>801-390-7190</td>
+                                <td>kingkartaxi@gmail.com</td>
+                                <td>2521 S Redwood Road, West Valley City, UT 84119</td>
+                                <td>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Nelson, Randy</td>
+                                <td>Missionary</td>
+                                <td>801-455-2151</td>
+                                <td>randyanelson@gmail.com</td>
+                                <td>1518 E Stanford Ct, Draper, UT 84020</td>
+                                <td>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Nelson, Sue</td>
+                                <td>Missionary</td>
+                                <td>801-455-2557</td>
+                                <td>sknelson125@gmail.com</td>
+                                <td>1518 E Stanford Ct, Draper, UT 84020</td>
+                                <td>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Pumphrey, Diane</td>
+                                <td>Missionary</td>
+                                <td>740-607-1060</td>
+                                <td>dspumphrey@yahoo.com</td>
+                                <td>1110 W Erda Way, Erda, UT 84074</td>
+                                <td>NS-Stansbury DOS Resource Manager<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Pumphrey, Mark</td>
+                                <td>Missionary</td>
+                                <td>740-607-9066</td>
+                                <td>mdpump79@yahoo.com</td>
+                                <td>1110 W Erda Way, Erda, UT 84074</td>
+                                <td>NS-Westlake DOS Resource Manager<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Rubio, Andres</td>
+                                <td>Missionary</td>
+                                <td>801-884-8063</td>
+                                <td>andresutah@gmail.com</td>
+                                <td>2914 S 3145 W, West Valley City, UT 84119</td>
+                                <td>NS-Stansbury Neighborhood Block Captain Trainer<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Rubio, Maria</td>
+                                <td>Missionary</td>
+                                <td>801-759-4370</td>
+                                <td>maletrubio@gmail.com</td>
+                                <td>2914 S 3145 W, West Valley City, UT 84119</td>
+                                <td>NS-Stansbury Neighborhood Block Captain Trainer<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Shaw, Bonnie</td>
+                                <td>Missionary</td>
+                                <td>801-664-8042</td>
+                                <td>bonnieandstevenshaw@gmail.com</td>
+                                <td>3078 Maple Way, West Valley City, UT. 84119</td>
+                                <td>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Shaw, Steve</td>
+                                <td>Missionary</td>
+                                <td>801-699-2073</td>
+                                <td>spshaw47@gmail.com</td>
+                                <td>3078 Maple Way, West Valley City, UT. 84119</td>
+                                <td>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Smith, Heather</td>
+                                <td>Missionary</td>
+                                <td>801-520-6203</td>
+                                <td>heathsmith424@gmail.com</td>
+                                <td>479 E Crystal Meadows Ln, Draper, UT 84020</td>
+                                <td>CRC-ESL Teacher<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Smith, Shaler</td>
+                                <td>Missionary</td>
+                                <td>801-598-5464</td>
+                                <td>shaler828@gmail.com</td>
+                                <td>479 E Crystal Meadows Ln, Draper, UT 84020</td>
+                                <td>CRC-ESL Teacher<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            </table></div><div id="49-CRCYou">
+                    <h3>CRC Youth Council</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Hofeling, Jana</td>
+                                <td>Missionary</td>
+                                <td>415-608-1288</td>
+                                <td>janabbb@yahoo.com</td>
+                                <td>167 E Street , Salt Lake City, UT 84103</td>
+                                <td>DOS-CRC Youth Council<br>NS-Neighborhood Services Volunteer<br>Admin-Historian / Photographer</td>  
+                                </tr>
+                            <tr>
+                                <td>Hofeling, Ken</td>
+                                <td>Missionary</td>
+                                <td>801-201-3655</td>
+                                <td>hofelingadobe@gmail.com</td>
+                                <td>167 E Street , Salt Lake City, UT 84103</td>
+                                <td>DOS-CRC Youth Council<br>NS-Neighborhood Services Volunteer<br>Admin-Historian / Photographer</td>  
+                                </tr>
+                            </table></div><div id="51-Associ">
+                    <h3>Associate City Chair</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Wagner, Andy</td>
+                                <td>Missionary</td>
+                                <td>801-979-5483</td>
+                                <td>black_kite_electric@yahoo.com</td>
+                                <td>3123 E Walker Mill Dr., Cottonwood Heights, UT 84121</td>
+                                <td>NS-Associate City Chair<br>NS-Westlake Area Director</td>  
+                                </tr>
+                            </table></div><div id="57-AdminD">
+                    <h3>Admin Director / Executive Secretary</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Eggett, Darren</td>
+                                <td>Missionary</td>
+                                <td>801-618-1939</td>
+                                <td>deggett@gmail.com</td>
+                                <td>698 S. Orchard Dr, Bountiful, UT 84010</td>
+                                <td>Admin-Administrative Director<br>Admin-Admin Director / Executive Secretary<br>Admin-Admin IT Specialist</td>  
+                                </tr>
+                            </table></div><div id="65-Langua">
+                    <h3>Language Coordinator - ESL and Others</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Coleman, Carolyn</td>
+                                <td>Missionary</td>
+                                <td>785-410-6193</td>
+                                <td>trcoleman@gmail.com</td>
+                                <td>1115 W. Rivercrest Cir., So Jordan, UT 84095</td>
+                                <td>CRC-Language Coordinator - ESL and Others</td>  
+                                </tr>
+                            <tr>
+                                <td>Coleman, Tom</td>
+                                <td>Missionary</td>
+                                <td>785-410-4062</td>
+                                <td>trcoleman@gmail.com</td>
+                                <td>1115 W. Rivercrest Cir., So Jordan, UT 84095</td>
+                                <td>CRC-Language Coordinator - ESL and Others</td>  
+                                </tr>
+                            <tr>
+                                <td>Lassen, Bonnie</td>
+                                <td>Missionary</td>
+                                <td>801-641-5802</td>
+                                <td>bonnie.lassen@gmail.com</td>
+                                <td>6362 S Lorreen Place, Salt Lake City, UT 84121</td>
+                                <td>CRC-Language Coordinator - ESL and Others</td>  
+                                </tr>
+                            <tr>
+                                <td>Lassen, Gary</td>
+                                <td>Missionary</td>
+                                <td>801-381-4980</td>
+                                <td>gary.lassen@gmail.com</td>
+                                <td>6362 S Lorreen Place, Salt Lake City, UT 84121</td>
+                                <td>CRC-Language Coordinator - ESL and Others</td>  
+                                </tr>
+                            </table></div><div id="66-SelfRe">
+                    <h3>Self-Reliance Coordinator / Facilitator</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Phillips, Jim</td>
+                                <td>Missionary</td>
+                                <td>801-664-3269</td>
+                                <td>jtphillips.007@gmail.com</td>
+                                <td>6282 W 3705 S., WVC, UT 84128</td>
+                                <td>InterFaith-Interfaith Council Coordinator<br>CRC-Self-Reliance Coordinator / Facilitator</td>  
+                                </tr>
+                            <tr>
+                                <td>Phillips, Kayla</td>
+                                <td>Missionary</td>
+                                <td>801-664-3042</td>
+                                <td>kaylacphillips.007@gmail.com</td>
+                                <td>6282 W 3705 S., WVC, UT 84128</td>
+                                <td>InterFaith-Interfaith Council Coordinator<br>CRC-Self-Reliance Coordinator / Facilitator</td>  
+                                </tr>
+                            </table></div><div id="75-Cheste">
+                    <h3>Chesterfield Area Director</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Brennan, Angela</td>
+                                <td>Missionary</td>
+                                <td>801-201-0509</td>
+                                <td>abrennanmht@gmail.com</td>
+                                <td>None</td>
+                                <td>NS-Chesterfield Area Director</td>  
+                                </tr>
+                            <tr>
+                                <td>Brennan, Stewart</td>
+                                <td>Missionary</td>
+                                <td>801-376-3734</td>
+                                <td>sabrennanmht@gmail.com</td>
+                                <td>None</td>
+                                <td>NS-Chesterfield Area Director</td>  
+                                </tr>
+                            </table></div><div id="79-Cheste">
+                    <h3>Chesterfield DOS Project Developer</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Harker, Joyce</td>
+                                <td>Missionary</td>
+                                <td>435-840-2070</td>
+                                <td>jharker423@gmail.com</td>
+                                <td>3888 N 2180 W, Erda, UT 84074</td>
+                                <td>NS-Chesterfield DOS Project Developer</td>  
+                                </tr>
+                            <tr>
+                                <td>Harker, Scott</td>
+                                <td>Missionary</td>
+                                <td>435-840-8153</td>
+                                <td>leoscottharker@gmail.com</td>
+                                <td>3888 N 2180 W, Erda, UT 84074</td>
+                                <td>NS-Chesterfield DOS Project Developer</td>  
+                                </tr>
+                            </table></div><div id="81-Stansb">
+                    <h3>Stansbury DOS Resource Manager</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Pumphrey, Diane</td>
+                                <td>Missionary</td>
+                                <td>740-607-1060</td>
+                                <td>dspumphrey@yahoo.com</td>
+                                <td>1110 W Erda Way, Erda, UT 84074</td>
+                                <td>NS-Stansbury DOS Resource Manager<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            </table></div><div id="84-Cheste">
+                    <h3>Chesterfield DOS Logistics Coordinator</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>King, Scott</td>
+                                <td>Missionary</td>
+                                <td>801-918-3177</td>
+                                <td>kingscotw@gmail.com</td>
+                                <td>5083 Clover View Drive, Murray, UT 84123</td>
+                                <td>NS-Chesterfield DOS Logistics Coordinator</td>  
+                                </tr>
+                            <tr>
+                                <td>King, Sharon</td>
+                                <td>Missionary</td>
+                                <td>801-262-1975</td>
+                                <td>kingsharon19@gmail.com</td>
+                                <td>5083 Clover View Drive, Murray, UT 84123</td>
+                                <td>NS-Chesterfield DOS Logistics Coordinator</td>  
+                                </tr>
+                            </table></div><div id="88-Stansb">
+                    <h3>Stansbury Neighborhood Block Captain Trainer</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Robb, Jay</td>
+                                <td>Missionary</td>
+                                <td>385-499-6440</td>
+                                <td>jayr@wslm.biz</td>
+                                <td>None</td>
+                                <td>NS-Stansbury Neighborhood Block Captain Trainer</td>  
+                                </tr>
+                            <tr>
+                                <td>Robb, Julie</td>
+                                <td>Missionary</td>
+                                <td>575-635-5563</td>
+                                <td>robbjulie7@gmail.com</td>
+                                <td>None</td>
+                                <td>NS-Stansbury Neighborhood Block Captain Trainer</td>  
+                                </tr>
+                            <tr>
+                                <td>Rubio, Andres</td>
+                                <td>Missionary</td>
+                                <td>801-884-8063</td>
+                                <td>andresutah@gmail.com</td>
+                                <td>2914 S 3145 W, West Valley City, UT 84119</td>
+                                <td>NS-Stansbury Neighborhood Block Captain Trainer<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            <tr>
+                                <td>Rubio, Maria</td>
+                                <td>Missionary</td>
+                                <td>801-759-4370</td>
+                                <td>maletrubio@gmail.com</td>
+                                <td>2914 S 3145 W, West Valley City, UT 84119</td>
+                                <td>NS-Stansbury Neighborhood Block Captain Trainer<br>NS-Neighborhood Services Volunteer</td>  
+                                </tr>
+                            </table></div><div id="91-Interf">
+                    <h3>Interfaith Council Coordinator</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Phillips, Jim</td>
+                                <td>Missionary</td>
+                                <td>801-664-3269</td>
+                                <td>jtphillips.007@gmail.com</td>
+                                <td>6282 W 3705 S., WVC, UT 84128</td>
+                                <td>InterFaith-Interfaith Council Coordinator<br>CRC-Self-Reliance Coordinator / Facilitator</td>  
+                                </tr>
+                            <tr>
+                                <td>Phillips, Kayla</td>
+                                <td>Missionary</td>
+                                <td>801-664-3042</td>
+                                <td>kaylacphillips.007@gmail.com</td>
+                                <td>6282 W 3705 S., WVC, UT 84128</td>
+                                <td>InterFaith-Interfaith Council Coordinator<br>CRC-Self-Reliance Coordinator / Facilitator</td>  
+                                </tr>
+                            </table></div><div id="92-Garden">
+                    <h3>Gardening</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Hamblin, Judy</td>
+                                <td>Volunteer</td>
+                                <td>801-520-1784</td>
+                                <td>judy.burr@hotmail.com</td>
+                                <td>1445 W 2280 S, West Valley City, UT 84119</td>
+                                <td>CRC-Gardening</td>  
+                                </tr>
+                            </table></div><div id="93-DOSYou">
+                    <h3>DOS Youth Council</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Evans, Chloe</td>
+                                <td>Volunteer</td>
+                                <td>801-523-9911</td>
+                                <td>chloeevans801@gmail.com</td>
+                                <td>1821 South 300 East, Draper, UT 84020</td>
+                                <td>CRC-DOS Youth Council</td>  
+                                </tr>
+                            <tr>
+                                <td>Evans, Clara</td>
+                                <td>Volunteer</td>
+                                <td>801-860-2276</td>
+                                <td>claraevans801@gmail.com</td>
+                                <td>1821 South 300 East, Draper, UT 84020</td>
+                                <td>CRC-DOS Youth Council</td>  
+                                </tr>
+                            <tr>
+                                <td>Evans, James</td>
+                                <td>Volunteer</td>
+                                <td>None</td>
+                                <td>whittakerevans@gmail.com</td>
+                                <td>1821 South 300 East, Draper, UT 84020</td>
+                                <td>CRC-DOS Youth Council</td>  
+                                </tr>
+                            <tr>
+                                <td>Evans, Lori</td>
+                                <td>Volunteer</td>
+                                <td>801-819-6993</td>
+                                <td>None</td>
+                                <td>1821 South 300 East, Draper, UT 84020</td>
+                                <td>CRC-DOS Youth Council</td>  
+                                </tr>
+                            <tr>
+                                <td>Evans, Matt</td>
+                                <td>Volunteer</td>
+                                <td>801-860-5885</td>
+                                <td>matt@timbermoose.com</td>
+                                <td>1821 South 300 East, Draper, UT 84020</td>
+                                <td>CRC-DOS Youth Council</td>  
+                                </tr>
+                            <tr>
+                                <td>Lin, James</td>
+                                <td>Missionary</td>
+                                <td>801-688-6877</td>
+                                <td>hawki181621116@gmail.com</td>
+                                <td>2107 E 3300 S Apt C, Salt Lake City, UT 84109</td>
+                                <td>CRC-DOS Youth Council</td>  
+                                </tr>
+                            <tr>
+                                <td>Lin, Jenny</td>
+                                <td>Missionary</td>
+                                <td>801-558-6288</td>
+                                <td>janicelin717@hotmail.com</td>
+                                <td>2107 E 3300 S Apt C, Salt Lake City, UT 84109</td>
+                                <td>CRC-DOS Youth Council</td>  
+                                </tr>
+                            </table></div><div id="94-SelfDe">
+                    <h3>Self Defense Specialist</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Platt, Shell</td>
+                                <td>Volunteer</td>
+                                <td>801-755-7185</td>
+                                <td>None</td>
+                                <td>2744 West 2890 South, WVC, UT 84119</td>
+                                <td>CRC-Self Defense Specialist</td>  
+                                </tr>
+                            </table></div><div id="95-Zumba">
+                    <h3>Zumba</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Smith, Misti</td>
+                                <td>Volunteer</td>
+                                <td>801-403-1288</td>
+                                <td>mistiblueeyes83@gmail.com</td>
+                                <td>None</td>
+                                <td>CRC-Zumba</td>  
+                                </tr>
+                            </table></div><div id="97-NSCons">
+                    <h3>NS Consultant</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Wagner, Lori</td>
+                                <td>Missionary</td>
+                                <td>801-971-5483</td>
+                                <td>lwag_fam7@yahoo.com</td>
+                                <td>3123 E Walker Mill Dr., Cottonwood Heights, UT 84121</td>
+                                <td>NS-NS Consultant<br>NS-Westlake Area Director</td>  
+                                </tr>
+                            </table></div><div id="99-NSLoan">
+                    <h3>NS Loans & Grants Specialist</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Miller, Della</td>
+                                <td>Missionary</td>
+                                <td>801-440-4709</td>
+                                <td>della.mil@gmail.com</td>
+                                <td>841 E. Charleston Circle, Sandy, UT. 84094</td>
+                                <td>NS-NS Loans & Grants Specialist</td>  
+                                </tr>
+                            <tr>
+                                <td>Miller, Terry</td>
+                                <td>Missionary</td>
+                                <td>801-440-4658</td>
+                                <td>foreman2@gmail.com</td>
+                                <td>841 E. Charleston Circle, Sandy, UT. 84094</td>
+                                <td>NS-NS Loans & Grants Specialist</td>  
+                                </tr>
+                            </table></div><div id="100-Projec">
+                    <h3>Project Development</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Johnson, Brad</td>
+                                <td>Missionary</td>
+                                <td>801-870-3300</td>
+                                <td>bdjohnsn3@gmail.com</td>
+                                <td>11543 S. Honey Locust Court, Draper, UT 84020</td>
+                                <td>NS-Project Development</td>  
+                                </tr>
+                            <tr>
+                                <td>Johnson, Janna</td>
+                                <td>Missionary</td>
+                                <td>801-230-2892</td>
+                                <td>janna.johnson@comcast.net</td>
+                                <td>11543 S. Honey Locust Court, Draper, UT 84020</td>
+                                <td>NS-Project Development</td>  
+                                </tr>
+                            <tr>
+                                <td>Miles, John</td>
+                                <td>Missionary</td>
+                                <td>801-201-5707</td>
+                                <td>johnrmiles68@gmail.com</td>
+                                <td>1974 E. Siggard Dr., Salt Lake City, UT 84106</td>
+                                <td>CRC-Sewing<br>NS-Project Development</td>  
+                                </tr>
+                            </table></div><div id="101-Resour">
+                    <h3>Resource Development</h3>
+                    <table style="width: 100%; text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Assignments</th>
+                      </tr>	
+            <tr>
+                                <td>Juett, David</td>
+                                <td>Missionary</td>
+                                <td>801-673-4026</td>
+                                <td>djuett1@gmail.com</td>
+                                <td>3737 S. Kenyon Park Dr., WVC, UT 84120</td>
+                                <td>NS-Resource Development</td>  
+                                </tr>
+                            <tr>
+                                <td>Juett, Emily</td>
+                                <td>Missionary</td>
+                                <td>801-699-3614</td>
+                                <td>djuett1@gmail.com</td>
+                                <td>3737 S. Kenyon Park Dr., WVC, UT 84120</td>
+                                <td>NS-Resource Development</td>  
+                                </tr>
+                            </table></div>     </div>
+            <script>
+                let isPopupOpen = false;
+            
+                function showPopup(deptId) {
+                    let content = document.getElementById(deptId).innerHTML;
+                    document.getElementById('popup-content').innerHTML = content;
+                    document.getElementById('popup').style.display = 'block';
+                    isPopupOpen = true;
+                    // Add event listener to the document when popup is shown
+                    setTimeout(() => {
+                        document.addEventListener('click', closePopupOutside);
+                    }, 0);
+                }
+            
+                function closePopup() {
+                    document.getElementById('popup').style.display = 'none';
+                    isPopupOpen = false;
+                    // Remove event listener when popup is closed
+                    document.removeEventListener('click', closePopupOutside);
+                }
+            
+                function closePopupOutside(event) {
+                    let popup = document.getElementById('popup');
+                    let popupContent = document.getElementById('popup-content');
+                    if (!popupContent.contains(event.target) && event.target !== popup) {
+                        closePopup();
+                    }
+                }
+            
+                // Add this function to handle clicks on mapped areas
+                function handleAreaClick(event) {
+                    event.stopPropagation();
+                    if (isPopupOpen) {
+                        closePopup();
+                    }
+                    showPopup(this.getAttribute('alt'));
+                }
+            
+                // Add event listeners to all area elements
+                document.querySelectorAll('area').forEach(area => {
+                    area.addEventListener('click', handleAreaClick);
+                });
+            
+                // Add this line to ensure the close button still works
+                document.querySelector('#popup .close-button').addEventListener('click', closePopup);
+			</script>
+        </body>
+        </html>
+    

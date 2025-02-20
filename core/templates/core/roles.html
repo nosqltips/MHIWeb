@@ -125,7 +125,6 @@
                       tbody.empty();
                       $.each(response.data, function(i, item) {
                         var row = $('<tr>');
-                        row.append($('<td>').text(item.assignment_role_id));
                         row.append($('<td>').text(item.role));
                         tbody.append(row);
                       });
@@ -157,7 +156,6 @@
                     <table id="sortableTable">
                         <thead>
                             <tr>
-                                <th style="width: 15px" data-column="id">ID</th>
                                 <th data-column="role">Role</th>
                                 <!-- Add more table headers as needed -->
                             </tr>
@@ -165,7 +163,6 @@
                         <tbody>
                             {% for role in roles %}
                             <tr>
-                                <td>{{ role.assignment_role_id }}</td>
                                 <td>{{ role.role }}</td>
                                 <!-- Add more table cells as needed -->
                             </tr>

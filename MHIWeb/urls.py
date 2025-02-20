@@ -27,6 +27,7 @@ urlpatterns = [
     path('', core_views.home, name='home'),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', core_views.custom_logout, name='logout'),
+    path('org_chart/', core_views.org_chart, name='org_chart'),
 
     path('staff/', core_views.staff, name='staff'),
     path('sort_data_staff/', core_views.sort_data_staff, name='sort_data_staff'),
@@ -40,4 +41,5 @@ urlpatterns = [
     path('sort_data_assignment_role/', core_views.sort_data_assignment_role, name='sort_data_assignment_role'),
 
     path('contact/', core_views.person_contact, name='person_contact'),
+    path('sort_data_contact/', core_views.sort_data_contact, name='sort_data_contact'),
 ]

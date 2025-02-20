@@ -194,6 +194,8 @@ class MhiViewAssignmentRoleAssigned(models.Model):
     Assignment = models.TextField(blank=True, null=True)
     Role = models.TextField(blank=True, null=True)
     AssignedPerson = models.TextField(blank=True, null=True)
+    AssignedWard = models.TextField(blank=True, null=True)
+    AssignedArea = models.TextField(blank=True, null=True)
     ReportToPerson = models.TextField(blank=True, null=True)
     ReportToRole = models.TextField(blank=True, null=True)
 
@@ -267,6 +269,18 @@ class MhiPersonAssignments(models.Model):
     objects = models.Manager()
     person_id = models.AutoField(primary_key=True, blank=False, null=False)
     assignment = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'vw_person_assignments'
+
+
+class MhiPersonAssignments2(models.Model):
+    objects = models.Manager()
+    person_id = models.AutoField(primary_key=True, blank=False, null=False)
+    assignment_role_sequence = models.TextField(blank=True, null=True)
+    assignment_code = models.TextField(blank=True, null=True)
+    role_description = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False

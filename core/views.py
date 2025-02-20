@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, login, authenticate
 from django.contrib import messages
 from django.shortcuts import redirect, render
-from .models import MhiViewPersonToSpreadsheet, MhiPersonAssignments, MhiViewArNospace, MhiViewUnassigned, MhiViewAssignmentRole, MhiViewAssignmentRoleAssigned
+from .models import MhiViewPersonToSpreadsheet, MhiPersonAssignments2, MhiViewArNospace, MhiViewUnassigned, MhiPersonContact, MhiViewAssignmentRoleAssigned
 from django.http import JsonResponse
 import logging
 from django.db.models import F
@@ -14,6 +14,9 @@ logger = logging.getLogger(__name__)
 def home(request):
     return render(request, 'core/home.html')
 
+@login_required
+def org_chart(request):
+    return render(request, 'core/MHI_GNE_OrgChart_2024-07-23.html')
 
 @login_required
 def staff(request):
@@ -59,7 +62,7 @@ def sort_data_roles(request):
 
 @login_required
 def assignments(request):
-    assignments = MhiPersonAssignments.objects.all()
+    assignments = MhiPersonAssignments2.objects.all()
     return render(request, 'core/assignments.html', {'assignments': assignments})
 
 def sort_data_assignments(request):
@@ -69,7 +72,7 @@ def sort_data_assignments(request):
     if order == 'desc':
         column = '-' + column
 
-    queryset = MhiPersonAssignments.objects.all().order_by(column)
+    queryset = MhiPersonAssignments2.objects.all().order_by(column)
     data = list(queryset.values())
 
     return JsonResponse({'data': data})
@@ -114,9 +117,25 @@ def sort_data_assignment_role(request):
 @login_required
 def person_contact(request):
     # persons = MhiPerson.objects.all()
-    persons = MhiViewPersonToSpreadsheet.objects.all()
-    return render(request, 'core/contacts.html', {'persons': persons})
+    contacts = MhiPersonContact.objects.all()
+    return render(request, 'core/contacts.html', {'contacts': contacts})
 
+def sort_data_contact(request):
+    column = request.GET.get('order_by', 'id')
+    order = request.GET.get('order', 'asc')
+
+    if order == 'desc':
+        column = '-' + column
+
+    queryset = MhiPersonContact.objects.all().order_by(column)
+    data = list(queryset.values())
+
+    # Apply the filter to the specific field that needs line breaks
+    for item in data:
+        if 'assignments' in item:
+            item['assignments'] = replace_with_linebreak(item['assignments'])
+
+    return JsonResponse({'data': data})
 
 def custom_logout(request):
     logout(request)

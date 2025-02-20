@@ -2,7 +2,7 @@
 <html lang="en">
 
     <head>
-        <title>Assignments | MHIWeb</title>
+        <title>Assignments and Roles | MHIWeb</title>
           {% include "core/shared_head.html" %}
         <style>
             {% include "core/shared_style.html" %}
@@ -134,6 +134,9 @@
                         }
                         row.append(assignedPersonCell);
 
+                        row.append($('<td>').text(item.AssignedWard));
+                        row.append($('<td>').text(item.AssignedArea));
+
                         // Create the ReportToPerson cell
                         var reportToPersonCell = $('<td>').text(item.ReportToPerson);
                         if (item.ReportToPerson === "Unassigned" || item.ReportToPerson === "Undefined") {
@@ -181,6 +184,8 @@
                                 <th data-column="Assignment">Assignment</th>
                                 <th data-column="Role">Role</th>
                                 <th data-column="AssignedPerson">Assigned Person</th>
+                                <th data-column="AssignedWard">Assigned Ward</th>
+                                <th data-column="AssignedArea">Assigned Area</th>
                                 <th data-column="ReportToPerson">Report To Person</th>
                                 <th data-column="ReportToRole">Report To Role</th>
                                 <!-- Add more table headers as needed -->                            </tr>
@@ -191,6 +196,8 @@
                                 <td>{{ assignment.Assignment }}</td>
                                 <td>{{ assignment.Role }}</td>
                                 <td>{{ assignment.AssignedPerson }}</td>
+                                <td>{{ assignment.AssignedWard }}</td>
+                                <td>{{ assignment.AssignedArea }}</td>
                                 <td>{{ assignment.ReportToPerson }}</td>
                                 <td>{{ assignment.ReportToRole }}</td>
                             </tr>

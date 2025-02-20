@@ -124,8 +124,9 @@
                       tbody.empty();
                       $.each(response.data, function(i, item) {
                         var row = $('<tr>');
-                        row.append($('<td>').text(item.person_id));
-                        row.append($('<td>').text(item.assignment));
+                        row.append($('<td>').text(item.assignment_role_sequence));
+                        row.append($('<td>').text(item.assignment_code));
+                        row.append($('<td>').text(item.role_description));
                         tbody.append(row);
                       });
                       $('#loadingIndicator').hide();
@@ -156,16 +157,17 @@
                     <table id="sortableTable">
                         <thead>
                             <tr>
-                                <th style="width: 15px" data-column="person_id">ID</th>
-                                <th data-column="assignment">Assignment</th>
+                              <th style="width: 10px" data-column="assignment_role_sequence">Assignment Role Sequence</th>
+                              <th data-column="assignment_code">Assignment Code</th>
+                              <th data-column="role_description">Role Description</th>
                                 <!-- Add more table headers as needed -->                            </tr>
                         </thead>
                         <tbody>
                             {% for assignment in assignments %}
                             <tr>
-                                <td>{{ assignment.person_id }}</td>
-                                <td>{{ assignment.assignment }}</td>
-                                <!-- Add more table cells as needed -->
+                                <td>{{ assignment.assignment_role_sequence }}</td>
+                                <td>{{ assignment.assignment_code }}</td>
+                                <td>{{ assignment.role_description }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Login to MHIWeb</title>
+        <title>Home | MHIWeb</title>
             {% include "core/shared_head.html" %}
         <style>
             {% include "core/shared_style.html" %}
@@ -27,14 +27,17 @@
             {% if user.is_authenticated %}
                 <div style="padding-left: 50px;">
                     <p>You are logged in as {{ user.username }}.</p>
-                    <p><a href="{% url 'staff' %}">View Staff Management</a></p>
-                    <p><a href="{% url 'assignment_role' %}">View Staff Assignments</a></p>
-                    <p><a href="{% url 'unassigned' %}">View Unassigned</a></p>
+                    <p><a href="{% url 'staff' %}">Staff Management</a></p>
+                    <p><a href="{% url 'assignment_role' %}">Staff Assignments</a></p>
+                    <p><a href="{% url 'unassigned' %}">Unassigned</a></p>
 
-                    <p><a href="{% url 'roles' %}">View Roles</a></p>
-                    <p><a href="{% url 'assignments' %}">View Assignments</a></p>
-                    <p><a href="{% url 'admin:index' %}">Admin</a></p>
+                    <p><a href="{% url 'roles' %}">Roles</a></p>
+                    <p><a href="{% url 'assignments' %}">Assignments</a></p>
+                    <p><a href="{% url 'person_contact' %}">Contacts</a></p>
+                    <p><a href="{% url 'org_chart' %}">Org Chart</a></p>
+
                     <p><a href="{% url 'logout' %}">Logout</a></p>
+                    <p><a href="{% url 'admin:index' %}">Admin</a></p>
                 </div>
             {% else %}
                 <p style="padding-left: 50px;">You are not logged in.</p>
