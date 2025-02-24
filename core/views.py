@@ -123,15 +123,27 @@ def assignment_role(request):
 def sort_data_assignment_role(request):
     column = request.GET.get('order_by', 'assignment_id')
     order = request.GET.get('order', 'asc')
+    search_query = request.GET.get('search', '')
 
     if order == 'desc':
         column = '-' + column
 
     queryset = MhiViewAssignmentRoleAssigned.objects.all().order_by(column)
+
+    if search_query:
+        queryset = queryset.filter(
+            Q(Assignment__icontains=search_query) |
+            Q(Role__icontains=search_query) |
+            Q(AssignedPerson__icontains=search_query) |
+            Q(AssignedWard__icontains=search_query) |
+            Q(AssignedArea__icontains=search_query) |
+            Q(ReportToPerson__icontains=search_query) |
+            Q(ReportToRole__icontains=search_query)
+        )
+
     data = list(queryset.values())
 
     return JsonResponse({'data': data})
-
 
 @login_required
 def person_contact(request):
