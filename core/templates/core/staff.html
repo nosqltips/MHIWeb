@@ -1,102 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <title>Staff | MHIWeb</title>
-          {% include "core/shared_head.html" %}
-        <style>
-            {% include "core/shared_style.html" %}
-
-            .table-container {
-                height: 800px; /* Adjust this value to fit 40 rows approximately */
-                overflow: auto;
-            }
-
-            table {
-                width: 95%;
-                border-collapse: collapse;
-            }
-
-            thead {
-                position: sticky;
-                top: 0;
-                z-index: 1;
-            }
-
-            thead th {
-                background-color: #417690; /* Change this to your desired header background color */
-                color: #f5dd5d; /* This sets the text color for the header */
-                font-weight: normal;
-                padding: 12px; /* This adds some padding to the header cells */
-                border: 1px solid #ddd;
-                font-size: 14px;
-                text-align: center;
-            }
-
-            td {
-                padding: 8px;
-                border: 1px solid #ddd;
-                font-size: 14px;
-            }
-
-            tbody tr:nth-child(even) {
-                background-color: #B6B6B6; /* Alternate row color for better readability */
-                color: black;
-            }
-
-            #sortableTable th {
-              cursor: pointer;
-            }
-            #sortableTable th.sorted-asc::after {
-              content: " ▲";
-            }
-
-            #sortableTable th.sorted-desc::after {
-              content: " ▼";
-            }
-
-            #sortableTable .email-column,
-            #sortableTable .email-cell {
-              max-width: 150px; /* Adjust as needed */
-              width: 150px;
-            }
-
-            #sortableTable td.email-cell {
-              word-break: break-all !important;
-              word-wrap: break-word !important;
-              overflow-wrap: break-word !important;
-              white-space: normal !important;
-            }
-
-            #sortableTable td {
-              max-width: 400px; /* Adjust as needed for other columns */
-              word-wrap: break-word;
-              overflow-wrap: break-word;
-            }
-
-        </style>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            function sortTable(column) {
-              $.ajax({
+<head>
+    <title>Staff | MHIWeb</title>
+    {% include "core/shared_head.html" %}
+    <style>
+        {% include "core/shared_style.html" %}
+        .table-container {
+            height: 800px; /* Adjust this value to fit 40 rows approximately */
+            overflow: auto;
+        }
+        table {
+            width: 95%;
+            border-collapse: collapse;
+        }
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        thead th {
+            background-color: #417690; /* Change this to your desired header background color */
+            color: #f5dd5d; /* This sets the text color for the header */
+            font-weight: normal;
+            padding: 12px; /* This adds some padding to the header cells */
+            border: 1px solid #ddd;
+            font-size: 14px;
+            text-align: center;
+        }
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #B6B6B6; /* Alternate row color for better readability */
+            color: black;
+        }
+        #sortableTable th {
+            cursor: pointer;
+        }
+        #sortableTable th.sorted-asc::after {
+            content: " ▲";
+        }
+        #sortableTable th.sorted-desc::after {
+            content: " ▼";
+        }
+        #sortableTable .email-column,
+        #sortableTable .email-cell {
+            max-width: 150px; /* Adjust as needed */
+            width: 150px;
+        }
+        #sortableTable td.email-cell {
+            word-break: break-all !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            white-space: normal !important;
+        }
+        #sortableTable td {
+            max-width: 400px; /* Adjust as needed for other columns */
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function sortTable(column) {
+            $.ajax({
                 url: '/sort_data_staff/',
                 data: { 'order_by': column },
                 success: function(response) {
-                  // Clear the table and repopulate it with the sorted data
-                  $('table tbody').empty();
-                  $.each(response.data, function(i, item) {
-                    // Append new row to table
-                  });
+                    // Clear the table and repopulate it with the sorted data
+                    $('table tbody').empty();
+                    $.each(response.data, function(i, item) {
+                        // Append new row to table
+                    });
                 }
-              });
-            }
+            });
+        }
 
-            $(document).ready(function() {
-              // Initial table load
-              loadTableData();
+        $(document).ready(function() {
+            // Initial table load
+            loadTableData();
 
-              // Click event for table headers
-              $('#sortableTable th').click(function() {
+            // Click event for table headers
+            $('#sortableTable th').click(function() {
                 var column = $(this).data('column');
                 var currentOrder = $(this).data('order') || 'asc';
                 var newOrder = currentOrder === 'asc' ? 'desc' : 'asc';
@@ -111,18 +98,24 @@
                 $(this).addClass('sorted-' + newOrder);
 
                 loadTableData(column, newOrder);
-              });
             });
 
-            function loadTableData(column = 'name', order = 'asc') {  // Use a real field name as default
-                  $('#loadingIndicator').show();
-                  $.ajax({
-                    url: '/sort_data_staff/',
-                    data: { 'order_by': column, 'order': order },
-                    success: function(response) {
-                      var tbody = $('#sortableTable tbody');
-                      tbody.empty();
-                      $.each(response.data, function(i, item) {
+            // Search input event
+            $('#search-input').on('input', function() {
+                var query = $(this).val();
+                loadTableData('name', 'asc', query);  // Use a real field name as default
+            });
+        });
+
+        function loadTableData(column = 'name', order = 'asc', search = '') {  // Use a real field name as default
+            $('#loadingIndicator').show();
+            $.ajax({
+                url: '/sort_data_staff/',
+                data: { 'order_by': column, 'order': order, 'search': search },
+                success: function(response) {
+                    var tbody = $('#sortableTable tbody');
+                    tbody.empty();
+                    $.each(response.data, function(i, item) {
                         var row = $('<tr>');
                         row.append($('<td>').text(item.name));
                         row.append($('<td>').text(item.type));
@@ -137,76 +130,75 @@
                         row.append($('<td>').html(safeReplace(item.assignments)));
                         row.append($('<td>').text(item.notes));
                         tbody.append(row);
-                      });
-                      $('#loadingIndicator').hide();
-                    },
-                    error: function(xhr, status, error) {
-                      console.error("Error fetching data:", error);
-                      $('#loadingIndicator').hide();
-                    }
-                  });
+                    });
+                    $('#loadingIndicator').hide();
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching data:", error);
+                    $('#loadingIndicator').hide();
                 }
+            });
+        }
 
-            function safeReplace(text) {
-              return text.replace(/\|#\|/g, '<br>');
-            }
+        function safeReplace(text) {
+            return text.replace(/\|#\|/g, '<br>');
+        }
+    </script>
+</head>
+<body data-admin-utc-offset="0">
+    <!-- Container -->
+    <div id="container">
+        {% include "core/shared_page_header.html" %}
 
-        </script>
-    </head>
-    <body data-admin-utc-offset="0">
-        <!-- Container -->
-        <div id="container">
-            {% include "core/shared_page_header.html" %}
-
-            <div style="padding-left: 50px;">
-                <h1>MHI Staff Management</h1>
-                <a href="{% url 'home' %}">Back to Home</a>
-                <p></p>
-                <div class="table-container">
-                    <table id="sortableTable">
-                        <thead>
-                            <tr>
-                                <th data-column="name">Name</th>
-                                <th data-column="type">Type</th>
-                                <th data-column="portal">Portal</th>
-                                <th data-column="phone">Phone</th>
-                                <th data-column="email" class="email-column">Email</th>
-                                <th data-column="address">Address</th>
-                                <th data-column="area">Area</th>
-                                <th data-column="ward">Ward</th>
-                                <th data-column="homeward">Home Ward</th>
-                                <th data-column="homestake">Home Stake</th>
-                                <th data-column="assignments">Assignments</th>
-                                <th data-column="notes">Notes</th>
-                                <!-- Add more table headers as needed -->
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for person in persons %}
-                            <tr>
-                                <td>{{ person.name }}</td>
-                                <td>{{ person.type }}</td>
-                                <td>{{ person.portal }}</td>
-                                <td>{{ person.phone }}</td>
-                                <td>{{ person.email }}</td>
-                                <td >{{ person.address }}</td>
-                                <td>{{ person.area }}</td>
-                                <td>{{ person.ward }}</td>
-                                <td>{{ person.homeward }}</td>
-                                <td>{{ person.homestake }}</td>
-                                <td>{{ person.assignments }}</td>
-                                <td>{{ person.notes }}</td>
-                                <!-- Add more table cells as needed -->
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-                <p></p>
-                <a href="{% url 'home' %}">Back to Home</a>
+        <div style="padding-left: 50px;">
+            <h1>MHI Staff Management</h1>
+            <a href="{% url 'home' %}">Back to Home</a>
+            <p></p>
+            <input type="text" id="search-input" placeholder="Search...">
+            <div class="table-container">
+                <table id="sortableTable">
+                    <thead>
+                        <tr>
+                            <th data-column="name">Name</th>
+                            <th data-column="type">Type</th>
+                            <th data-column="portal">Portal</th>
+                            <th data-column="phone">Phone</th>
+                            <th data-column="email" class="email-column">Email</th>
+                            <th data-column="address">Address</th>
+                            <th data-column="area">Area</th>
+                            <th data-column="ward">Ward</th>
+                            <th data-column="homeward">Home Ward</th>
+                            <th data-column="homestake">Home Stake</th>
+                            <th data-column="assignments">Assignments</th>
+                            <th data-column="notes">Notes</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for person in persons %}
+                        <tr>
+                            <td>{{ person.name }}</td>
+                            <td>{{ person.type }}</td>
+                            <td>{{ person.portal }}</td>
+                            <td>{{ person.phone }}</td>
+                            <td>{{ person.email }}</td>
+                            <td>{{ person.address }}</td>
+                            <td>{{ person.area }}</td>
+                            <td>{{ person.ward }}</td>
+                            <td>{{ person.homeward }}</td>
+                            <td>{{ person.homestake }}</td>
+                            <td>{{ person.assignments }}</td>
+                            <td>{{ person.notes }}</td>
+                            <!-- Add more table cells as needed -->
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
-
+            <p></p>
+            <a href="{% url 'home' %}">Back to Home</a>
         </div>
-        {% include "core/shared_svgs.html" %}
-    </body>
+    </div>
+    {% include "core/shared_svgs.html" %}
+</body>
 </html>

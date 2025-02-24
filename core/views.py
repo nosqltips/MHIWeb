@@ -6,7 +6,7 @@ from django.shortcuts import redirect, render
 from .models import MhiViewPersonToSpreadsheet, MhiPersonAssignments2, MhiViewArNospace, MhiViewUnassigned, MhiPersonContact, MhiViewAssignmentRoleAssigned
 from django.http import JsonResponse
 import logging
-from django.db.models import F
+from django.db.models import F, Q
 from .templatetags.custom_filters import replace_with_linebreak
 
 logger = logging.getLogger(__name__)
@@ -24,14 +24,34 @@ def staff(request):
     persons = MhiViewPersonToSpreadsheet.objects.all()
     return render(request, 'core/staff.html', {'persons': persons})
 
+
 def sort_data_staff(request):
     column = request.GET.get('order_by', 'id')
     order = request.GET.get('order', 'asc')
+    search_query = request.GET.get('search', '')
 
     if order == 'desc':
         column = '-' + column
 
     queryset = MhiViewPersonToSpreadsheet.objects.all().order_by(column)
+
+    if search_query:
+        queryset = queryset.filter(
+            Q(name__icontains=search_query) |
+            Q(namefnf__icontains=search_query) |
+            Q(type__icontains=search_query) |
+            Q(portal__icontains=search_query) |
+            Q(phone__icontains=search_query) |
+            Q(email__icontains=search_query) |
+            Q(address__icontains=search_query) |
+            Q(area__icontains=search_query) |
+            Q(ward__icontains=search_query) |
+            Q(homeward__icontains=search_query) |
+            Q(homestake__icontains=search_query) |
+            Q(notes__icontains=search_query) |
+            Q(assignments__icontains=search_query)  # Add all relevant fields here
+        )
+
     data = list(queryset.values())
 
     # Apply the filter to the specific field that needs line breaks
@@ -40,7 +60,6 @@ def sort_data_staff(request):
             item['assignments'] = replace_with_linebreak(item['assignments'])
 
     return JsonResponse({'data': data})
-
 
 @login_required
 def roles(request):
